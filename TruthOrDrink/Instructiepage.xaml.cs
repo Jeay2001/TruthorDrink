@@ -9,6 +9,6 @@ public partial class Instructiepage : ContentPage
 
     private async void Button_Clicked(object sender, EventArgs e)
     {
-        await Navigation.PushModalAsync(new MainPage());
+        await Navigation.PushModalAsync(new LoginPage());
     }
 }

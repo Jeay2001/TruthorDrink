@@ -30,7 +30,7 @@
 
             <Button ImageSource="settings.png"
                     BackgroundColor="Transparent"
-                    Clicked="Button_Clicked"
+                    Clicked="Settings_Clicked"
                     HorizontalOptions="Start"
                     VerticalOptions="Start"
                     Padding="5"
@@ -38,15 +38,12 @@
                     HeightRequest="40"
                     WidthRequest="50"
                     Grid.Column="0" />
-            
-
-
         </Grid>
 
         <!-- Rest of the content below the settings button -->
         <VerticalStackLayout Grid.Row="2" Spacing="50" Padding="20" HorizontalOptions="Center" >
             <Image
-                Margin="-30,-50,0,0"
+                Margin="0,-50,0,0"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 Source="Truthordrink.png"
@@ -55,7 +52,7 @@
                 SemanticProperties.Description="Truth or drink Symbol" />
             <!-- Welkom-tekst met afgeronde border -->
             <Frame
-                Margin="-30,-40,0,0"
+                Margin="0,-40,0,0"
                 CornerRadius="10"
                 Background="#98FBC5"
                 Padding="5"
@@ -69,12 +66,13 @@
                     HorizontalOptions="Center"
                     FontAttributes="Bold" />
             </Frame>
+            
 
             <!-- Vriendenlijst knop -->
             <Button Text="Vriendenlijst"
                     FontSize="Medium"
                     BackgroundColor="#FF6F61"
-                    Margin="-30,30,0,0"
+                    Margin="0,30,0,0"
                     CornerRadius="10"
                     HeightRequest="50"
                     WidthRequest="250"
@@ -82,7 +80,7 @@
 
             <!-- Maak eigen vragen knop -->
             <Button Text="Maak eigen vragen"
-                    Margin="-30,30,0,0"
+                    Margin="0,30,0,0"
                     FontSize="Medium"
                     BackgroundColor="#98FBC5"
                     CornerRadius="10"
@@ -92,9 +90,9 @@
 
             <!-- Start game knop -->
             <Button Text="START GAME!"
-                    Margin="-30,40,0,0"
+                    Margin="0,40,0,0"
                     FontSize="Large"
-                    BackgroundColor="#ff5e57"
+                    BackgroundColor="#FF6F61"
                     CornerRadius="10"
                     HeightRequest="50"
                     WidthRequest="300"
