@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TruthOrDrink.MainPage"
+             BackgroundColor="#004D4D"
+             >
+    
+
+    <!-- Main Grid Layout -->
+    <Grid>
+        <!-- Define rows: One for the settings button, one for the rest of the page -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Define a single column -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Settings Button in the top-right -->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <!-- Placeholder for spacing -->
+                <ColumnDefinition Width="Auto" />
+                <!-- For the button -->
+            </Grid.ColumnDefinitions>
+
+            <Button ImageSource="settings.png"
+                    BackgroundColor="Transparent"
+                    Clicked="Button_Clicked"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"
+                    Padding="5"
+                    CornerRadius="25"
+                    HeightRequest="40"
+                    WidthRequest="50"
+                    Grid.Column="0" />
+            
+
+
+        </Grid>
+
+        <!-- Rest of the content below the settings button -->
+        <VerticalStackLayout Grid.Row="2" Spacing="50" Padding="20" HorizontalOptions="Center" >
+            <Image
+                Margin="-30,-50,0,0"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Source="Truthordrink.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="Truth or drink Symbol" />
+            <!-- Welkom-tekst met afgeronde border -->
+            <Frame
+                Margin="-30,-40,0,0"
+                CornerRadius="10"
+                Background="#98FBC5"
+                Padding="5"
+                HeightRequest="50"
+                WidthRequest="300"
+                HorizontalOptions="Center"
+                BackgroundColor="Transparent">
+                <Label Text="Welkom, Jeay!"
+                       TextColor="#003131"
+                    FontSize="Large"
+                    HorizontalOptions="Center"
+                    FontAttributes="Bold" />
+            </Frame>
+
+            <!-- Vriendenlijst knop -->
+            <Button Text="Vriendenlijst"
+                    FontSize="Medium"
+                    BackgroundColor="#FF6F61"
+                    Margin="-30,30,0,0"
+                    CornerRadius="10"
+                    HeightRequest="50"
+                    WidthRequest="250"
+                    HorizontalOptions="Center" />
+
+            <!-- Maak eigen vragen knop -->
+            <Button Text="Maak eigen vragen"
+                    Margin="-30,30,0,0"
+                    FontSize="Medium"
+                    BackgroundColor="#98FBC5"
+                    CornerRadius="10"
+                    HeightRequest="50"
+                    WidthRequest="250"
+                    HorizontalOptions="Center" />
+
+            <!-- Start game knop -->
+            <Button Text="START GAME!"
+                    Margin="-30,40,0,0"
+                    FontSize="Large"
+                    BackgroundColor="#ff5e57"
+                    CornerRadius="10"
+                    HeightRequest="50"
+                    WidthRequest="300"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </Grid>
+
+</ContentPage>
