@@ -19,7 +19,7 @@
                 WidthRequest="50" />
 
         <!-- Main Content -->
-        <ScrollView>
+        
             <VerticalStackLayout Spacing="30" Padding="20" HorizontalOptions="Center" VerticalOptions="Start" Margin="0,50,0,0">
                 <!-- Logo -->
                 <Image Source="Truthordrink.png"
@@ -52,17 +52,7 @@
                         Margin="0"/>
                 </Frame>
 
-                <Button Text="Toevoegen"
-                    BackgroundColor="#FF6F61"
-                    TextColor="#003131"
-                    FontSize="Large"
-                    FontAttributes="Bold"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    HeightRequest="40"
-                    WidthRequest="150"
-                    CornerRadius="10"
-                    Padding="5"/>
+                
 
                 <!-- Kies Categorie Picker -->
                 <Frame CornerRadius="10"
@@ -85,8 +75,41 @@
                         </Picker.Items>
                     </Picker>
                 </Frame>
+                <Frame CornerRadius="10"
+                   BackgroundColor="#98FBC5"
+                   Padding="5"
+                   HeightRequest="60"
+                   WidthRequest="300"
+                   HorizontalOptions="Center">
+                    <Picker Title="Select Difficulty"
+                        TextColor="#003131"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        BackgroundColor="Transparent"
+                        HorizontalOptions="Center">
+                        <Picker.Items>
+                            <x:String>1</x:String>
+                            <x:String>2</x:String>
+                            <x:String>3</x:String>
+                            <x:String>4</x:String>
+                            <x:String>5</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </Frame>
+                <Button Text="Toevoegen"
+                    BackgroundColor="#FF6F61"
+                    TextColor="#003131"
+                    FontSize="Large"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    HeightRequest="40"
+                    WidthRequest="150"
+                    CornerRadius="10"
+                    Padding="5"
+                        Clicked="Toevoegen_Clicked"/>
 
             </VerticalStackLayout>
-        </ScrollView>
+        
     </Grid>
 </ContentPage>

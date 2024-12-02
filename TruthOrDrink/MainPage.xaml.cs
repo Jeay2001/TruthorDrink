@@ -27,6 +27,10 @@
         {
             await Navigation.PushModalAsync(new VragenlijstPage());
         }
+        private async void Difficulty_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new DifficultyPage());
+        }
     }
 
 }

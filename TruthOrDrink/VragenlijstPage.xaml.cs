@@ -15,6 +15,8 @@ public partial class VragenlijstPage : ContentPage
         await Navigation.PushModalAsync(new MainPage());
     }
 
-    
-
+    private async void Toevoegen_Clicked(object sender, EventArgs e)
+    {
+        await Navigation.PushModalAsync(new MainPage());
+    }
 }

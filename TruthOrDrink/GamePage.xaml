@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TruthOrDrink.GamePage"
+             BackgroundColor="#004D4D">
+    <Grid>
+
+        <!-- Define rows: One for the header, one for the question and timer, one for the buttons -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Header with logo -->
+        
+
+        <!-- Timer and Question -->
+        <VerticalStackLayout Grid.Row="1" Spacing="30" Padding="20" HorizontalOptions="Center" >
+
+            <Frame 
+                Margin="0,20,0,0" 
+                CornerRadius="10" 
+                Background="#98FBC5" 
+                Padding="5" 
+                HeightRequest="75" 
+                WidthRequest="150" 
+                HorizontalOptions="Center">
+                <Label Text="10:00" 
+                   FontSize="Large" 
+                VerticalOptions="Center"    
+                   HorizontalOptions="Center" />
+                </Frame>
+
+            <Frame 
+                Margin="0,0,0,0" 
+                CornerRadius="10" 
+                Background="#FF6F61" 
+                Padding="5" 
+                HeightRequest="200" 
+                WidthRequest="350" 
+                HorizontalOptions="Center">
+                <Label Text="Vraag 1" 
+                       TextColor="#003131" 
+                       FontSize="Large" 
+                       HorizontalOptions="Center" 
+                       VerticalOptions="Center"
+                       FontAttributes="Bold"/>
+            </Frame>
+        </VerticalStackLayout>
+
+        <!-- Answering buttons -->
+        <VerticalStackLayout Grid.Row="2" Spacing="20" Padding="20" HorizontalOptions="Center">
+            <Button ImageSource="check.png" 
+                    BackgroundColor="#98FBC5" 
+                    FontSize="Large" 
+                    HorizontalOptions="Center" 
+                    VerticalOptions="Center" 
+                    HeightRequest="150" 
+                    WidthRequest="150" 
+                    CornerRadius="10" />
+            
+            <Frame 
+                Margin="0,0,0,0" 
+                CornerRadius="10" 
+                Background="#FF6F61" 
+                Padding="5" 
+                HeightRequest="50" 
+                WidthRequest="50" 
+                HorizontalOptions="Center">
+                    <Label Text="Or" 
+                    TextColor="#003131" 
+                    FontSize="Large" 
+                    HorizontalOptions="Center" 
+                    VerticalOptions="Center"
+                    FontAttributes="Bold"/>
+            </Frame>
+
+
+            <Button ImageSource="cocktail.png" 
+                BackgroundColor="#98FBC5" 
+                FontSize="Large" 
+                HorizontalOptions="Center" 
+                VerticalOptions="Center" 
+                HeightRequest="150" 
+                WidthRequest="150" 
+                CornerRadius="10" />
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

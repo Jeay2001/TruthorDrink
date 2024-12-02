@@ -96,7 +96,7 @@
                     HeightRequest="60"
                     WidthRequest="350"
                     FontAttributes="Bold"
-                    
+                    Clicked="Difficulty_Clicked"
                     HorizontalOptions="Center" />
 
         </VerticalStackLayout>
