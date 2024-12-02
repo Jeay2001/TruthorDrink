@@ -3,104 +3,105 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TruthOrDrink.Instructiepage"
              BackgroundColor="#004D4D"
-             Title="Instructiepage">
-    <Grid Margin="20">
-        <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Fill" Spacing="15">
-            
-            <!-- Titel -->
-            <Frame BackgroundColor="#98FBC5" CornerRadius="10" Padding="10" Margin="0,20">
-                <Label Text="Instructies" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" Margin="10"/>
-            </Frame>
+             >
+    <Grid Padding="20">
+        <ScrollView>
+            <VerticalStackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Spacing="15">
+                
+                <!-- Titel -->
+                <Frame BackgroundColor="#98FBC5" CornerRadius="10" Padding="10" Margin="0,20">
+                    <Label Text="Instructies" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" Margin="10"/>
+                </Frame>
 
-            <!-- Kies een moeilijkheidsgraad -->
-            <Frame BackgroundColor="#FF6F61" CornerRadius="10" Padding="0">
-                <Grid Margin="10">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Image Source="flame.png" WidthRequest="40" HeightRequest="40" VerticalOptions="Center"/>
-                    <VerticalStackLayout Grid.Column="1" Margin="10,0,0,0">
-                        <Label Text="Kies een moeilijkheidsgraad" FontSize="16" FontAttributes="Bold" />
-                        <Label Text="Kies 1 tot 5 Sterren voor moeilijkheid" FontSize="14" />
-                    </VerticalStackLayout>
-                </Grid>
-            </Frame>
+                <!-- Kies een moeilijkheidsgraad -->
+                <Frame BackgroundColor="#FF6F61" CornerRadius="10" Padding="0">
+                    <Grid Margin="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="flame.png" WidthRequest="40" HeightRequest="40" VerticalOptions="Center"/>
+                        <VerticalStackLayout Grid.Column="1" Margin="10,0,0,0">
+                            <Label Text="Kies een moeilijkheidsgraad" FontSize="16" FontAttributes="Bold" />
+                            <Label Text="Kies 1 tot 5 Sterren voor moeilijkheid" FontSize="14" />
+                        </VerticalStackLayout>
+                    </Grid>
+                </Frame>
 
-            <!-- Voeg vrienden toe -->
-            <Frame BackgroundColor="#98FBC5" CornerRadius="10" Padding="0">
-                <Grid Margin="10">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Image Source="friends.png" WidthRequest="40" HeightRequest="40" VerticalOptions="Center"/>
-                    <VerticalStackLayout Grid.Column="1" Margin="10,0,0,0">
-                        <Label Text="Voeg vrienden toe" FontSize="16" FontAttributes="Bold" />
-                        <Label Text="Voeg vrienden toe aan je vriendenlijst via naam of via QR-Code" FontSize="14" />
-                    </VerticalStackLayout>
-                </Grid>
-            </Frame>
+                <!-- Voeg vrienden toe -->
+                <Frame BackgroundColor="#98FBC5" CornerRadius="10" Padding="0">
+                    <Grid Margin="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="friends.png" WidthRequest="40" HeightRequest="40" VerticalOptions="Center"/>
+                        <VerticalStackLayout Grid.Column="1" Margin="10,0,0,0">
+                            <Label Text="Voeg vrienden toe" FontSize="16" FontAttributes="Bold" />
+                            <Label Text="Voeg vrienden toe aan je vriendenlijst via naam of via QR-Code" FontSize="14" />
+                        </VerticalStackLayout>
+                    </Grid>
+                </Frame>
 
-            <!-- Truth Or Dare -->
-            <Frame BackgroundColor="#FF6F61" CornerRadius="10" Padding="0">
-                <Grid Margin="10">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Image Source="console.png" WidthRequest="40" HeightRequest="40" VerticalOptions="Center"/>
-                    <VerticalStackLayout Grid.Column="1" Margin="10,0,0,0">
-                        <Label Text="Truth Or Kiss" FontSize="16" FontAttributes="Bold" />
-                        <Label Text="Eerste speler kiest truth of dare" FontSize="14" />
-                    </VerticalStackLayout>
-                </Grid>
-            </Frame>
+                <!-- Truth Or Dare -->
+                <Frame BackgroundColor="#FF6F61" CornerRadius="10" Padding="0">
+                    <Grid Margin="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="console.png" WidthRequest="40" HeightRequest="40" VerticalOptions="Center"/>
+                        <VerticalStackLayout Grid.Column="1" Margin="10,0,0,0">
+                            <Label Text="Truth Or Dare" FontSize="16" FontAttributes="Bold" />
+                            <Label Text="Eerste speler kiest truth of dare" FontSize="14" />
+                        </VerticalStackLayout>
+                    </Grid>
+                </Frame>
 
-            <!-- Do Truth Or Dare -->
-            <Frame BackgroundColor="#98FBC5" CornerRadius="10" Padding="0">
-                <Grid Margin="10">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Image Source="checked.png" WidthRequest="40" HeightRequest="40" VerticalOptions="Center"/>
-                    <VerticalStackLayout Grid.Column="1" Margin="10,0,0,0">
-                        <Label Text="Do Truth Or Kiss" FontSize="16" FontAttributes="Bold" />
-                        <Label Text="Lees de vraag of opdracht hardop en antwoord of voer hem uit" FontSize="14" />
-                    </VerticalStackLayout>
-                </Grid>
-            </Frame>
+                <!-- Do Truth Or Dare -->
+                <Frame BackgroundColor="#98FBC5" CornerRadius="10" Padding="0">
+                    <Grid Margin="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="checked.png" WidthRequest="40" HeightRequest="40" VerticalOptions="Center"/>
+                        <VerticalStackLayout Grid.Column="1" Margin="10,0,0,0">
+                            <Label Text="Do Truth Or Dare" FontSize="16" FontAttributes="Bold" />
+                            <Label Text="Lees de vraag of opdracht hardop en antwoord of voer hem uit" FontSize="14" />
+                        </VerticalStackLayout>
+                    </Grid>
+                </Frame>
 
+                <!-- Timer Ends -->
+                <Frame BackgroundColor="#FF6F61" CornerRadius="10" Padding="0">
+                    <Grid Margin="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="hourglass.png" WidthRequest="40" HeightRequest="40" VerticalOptions="Center"/>
+                        <VerticalStackLayout Grid.Column="1" Margin="10,0,0,0">
+                            <Label Text="Timer Ends" FontSize="16" FontAttributes="Bold" />
+                            <Label Text="Kijk hoeveel vragen of opdrachten zijn uitgevoerd voordat de timer is voorbij. En dan SPEEL NOG EEN X" FontSize="14" />
+                        </VerticalStackLayout>
+                    </Grid>
+                </Frame>
 
-            <!-- Timer Ends -->
-            <Frame BackgroundColor="#FF6F61" CornerRadius="10" Padding="0">
-                <Grid Margin="10">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Image Source="hourglass.png" WidthRequest="40" HeightRequest="40" VerticalOptions="Center"/>
-                    <VerticalStackLayout Grid.Column="1" Margin="10,0,0,0">
-                        <Label Text="Nigga But" FontSize="16" FontAttributes="Bold" />
-                        <Label Text="Kijk hoeveel vragen of opdrachten zijn uitgevoerd voordat de timer is voorbij. En dan SPEEL NOG EEN X" FontSize="14" />
-                    </VerticalStackLayout>
-                </Grid>
-            </Frame>
-
-
-            <!-- "Got It" Button -->
-            <Button Text="Got It!"
-                BackgroundColor="#FF6347" 
-                FontSize="18"
-                Padding="10"
-                CornerRadius="25"
-                WidthRequest="200"
-                HeightRequest="50"
-                VerticalOptions="End"
-                HorizontalOptions="Center"
-                Clicked="Button_Clicked" 
-                Margin="0,20,0,0"/>
-        </VerticalStackLayout>
+                <!-- "Got It" Button -->
+                <Button Text="Got It!"
+                    BackgroundColor="#FF6347" 
+                    FontSize="18"
+                    Padding="10"
+                    CornerRadius="25"
+                    WidthRequest="200"
+                    HeightRequest="50"
+                    VerticalOptions="End"
+                    HorizontalOptions="Center"
+                    Clicked="Button_Clicked"
+                    
+                    Margin="0,20,0,0"/>
+            </VerticalStackLayout>
+        </ScrollView>
     </Grid>
 </ContentPage>

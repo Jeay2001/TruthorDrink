@@ -6,7 +6,8 @@
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Instructiepage());
+            // Set the MainPage to Instructiepage directly
+            MainPage = new Instructiepage();
         }
     }
 }

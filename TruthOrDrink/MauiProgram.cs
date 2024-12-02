@@ -15,6 +15,8 @@ namespace TruthOrDrink
                     fonts.AddFont("Jersey10.ttf", "Jersey10");
                     fonts.AddFont("Bangers.ttf", "Bangers");
                 });
+            builder.Services.AddSingleton<MainPage>();
+            builder.Services.AddSingleton<Instructiepage>();
 
 #if DEBUG
             builder.Logging.AddDebug();
