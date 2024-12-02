@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TruthOrDrink.Vriendelijst"
+             BackgroundColor="#004D4D">
+
+    <!-- Main Grid Layout -->
+    <Grid>
+
+        <!-- Top bar for the return button -->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button ImageSource="returnicon.png"
+                    BackgroundColor="Transparent"
+                    Clicked="Return_Clicked"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"
+                    Padding="5"
+                    CornerRadius="25"
+                    HeightRequest="40"
+                    WidthRequest="50"
+                    Grid.Column="0" />
+        </Grid>
+
+        <!-- Main Content -->
+        <VerticalStackLayout Spacing="30" Padding="20" HorizontalOptions="Center" VerticalOptions="Start" Margin="0,50,0,0">
+
+            <!-- Logo -->
+            <Image Source="Truthordrink.png"
+                   HeightRequest="185"
+                   Aspect="AspectFit"
+                   SemanticProperties.Description="Truth or Drink Symbol"
+                   HorizontalOptions="Center" />
+
+            <!-- Voeg Vriend Toe Button -->
+            <Button Text="Voeg Vriend Toe"
+                BackgroundColor="#98FBC5"
+                TextColor="#003131"
+                FontSize="Large"
+                FontAttributes="Bold"
+                CornerRadius="10"
+                HeightRequest="50"
+                WidthRequest="300"
+                HorizontalOptions="Center"
+                Clicked="VoegVriendToe_Clicked" />
+
+            <!-- QR Code Button -->
+            <Button Text="QR-Code"
+                BackgroundColor="#FF6F61"
+                TextColor="#003131"
+                FontSize="Large"
+                FontAttributes="Bold"
+                CornerRadius="10"
+                HeightRequest="50"
+                WidthRequest="300"
+                HorizontalOptions="Center"
+                Clicked="QRCode_Clicked" />
+
+
+            <!-- Friends List -->
+            <Frame CornerRadius="10"
+                   BackgroundColor="#98FBC5"
+                   Padding="10"
+                   WidthRequest="300"
+                   HorizontalOptions="Center">
+                <VerticalStackLayout>
+                    <Label Text="• Vriend 1" TextColor="#003131" FontSize="Medium" />
+                    <Label Text="• Vriend 2" TextColor="#003131" FontSize="Medium" />
+                    <Label Text="• Vriend 3" TextColor="#003131" FontSize="Medium" />
+                    <Label Text="• Vriend 4" TextColor="#003131" FontSize="Medium" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Verwijder Button -->
+            <Button Text="Verwijder"
+                BackgroundColor="#FF6F61"
+                TextColor="#003131"
+                FontSize="Large"
+                FontAttributes="Bold"
+                CornerRadius="10"
+                HeightRequest="50"
+                WidthRequest="300"
+                HorizontalOptions="Center"
+                Clicked="Verwijder_Clicked" />
+
+        </VerticalStackLayout>
+    </Grid>
+
+</ContentPage>

@@ -66,6 +66,7 @@
                 HorizontalOptions="Center"
                 VerticalOptions="Center">
                 <Entry Placeholder="PASSWORD"
+                    PlaceholderColor="DarkGrey"
                     FontSize="16"
                     IsPassword="True"
                     Margin="0"

@@ -36,6 +36,7 @@
                 WidthRequest="50"
                 Grid.Column="0" />
         </Grid>
+        
         <VerticalStackLayout Grid.Row="2" Spacing="50" Padding="20" HorizontalOptions="Center" >
             <Image
             Margin="0,50,0,0"
@@ -51,8 +52,8 @@
             CornerRadius="10"
             Background="#98FBC5"
             Padding="5"
-            HeightRequest="50"
-            WidthRequest="300"
+            HeightRequest="60"
+            WidthRequest="350"
             HorizontalOptions="Center"
             BackgroundColor="Transparent">
                 <Label Text="Truth Or Drink"
@@ -63,7 +64,7 @@
             </Frame>
             
             <Frame
-                Margin="0,-40,0,0"
+                Margin="0,0,0,0"
                 CornerRadius="10"
                 Background="#FF6F61"
                 Padding="5"
@@ -71,7 +72,7 @@
                 WidthRequest="300"
                 HorizontalOptions="Center"
                 BackgroundColor="Transparent">
-                <Label Text="Name"
+                <Label Text="Placeholder for name"
                     TextColor="#003131"
                     FontSize="Large"
                     HorizontalOptions="Center"
@@ -79,7 +80,7 @@
             </Frame>
 
             <Frame
-                Margin="0,-40,0,0"
+                Margin="0,-20,0,0"
                 CornerRadius="10"
                 Background="#98FBC5"
                 Padding="5"
@@ -87,12 +88,13 @@
                 WidthRequest="300"
                 HorizontalOptions="Center"
                 BackgroundColor="Transparent">
-                <Label Text="Email"
+                <Label Text="Placeholder for Email"
                     TextColor="#003131"
                     FontSize="Large"
                     HorizontalOptions="Center"
                     FontAttributes="Bold" />
             </Frame>
+            
         </VerticalStackLayout>
     </Grid>
 </ContentPage>

@@ -72,6 +72,21 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="QrcodePage.xaml.cs">
+	    <DependentUpon>QrcodePage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="VriendelijstPage.xaml.cs">
+	    <DependentUpon>VriendelijstPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="VriendengezochtPage.xaml.cs">
+	    <DependentUpon>VriendengezochtPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="VriendenzoekenPage.xaml.cs">
+	    <DependentUpon>VriendenzoekenPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="GeregistreerdPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -81,10 +96,25 @@
 	  <MauiXaml Update="LoginPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="QrcodePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="RegisterPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="SettingsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="VragenlijstPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="VriendelijstPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="VriendengezochtPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="VriendenzoekenPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

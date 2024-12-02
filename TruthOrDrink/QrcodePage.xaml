@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TruthOrDrink.Qrcode"
+             BackgroundColor="#004D4D">
+
+    <!-- Main Grid Layout -->
+    <Grid>
+        <!-- Back Button -->
+        <Button ImageSource="returnicon.png"
+                BackgroundColor="Transparent"
+                Clicked="Return_Clicked"
+                HorizontalOptions="Start"
+                VerticalOptions="Start"
+                Padding="5"
+                CornerRadius="25"
+                HeightRequest="40"
+                WidthRequest="50" />
+
+        <!-- Main Content -->
+        <VerticalStackLayout Spacing="30" Padding="20" HorizontalOptions="Center" VerticalOptions="Start" Margin="0,50,0,0">
+            <!-- Logo -->
+            <Image Source="Truthordrink.png"
+                   HeightRequest="185"
+                   Aspect="AspectFit"
+                   HorizontalOptions="Center" />
+
+            <!-- QR Code -->
+            <Frame CornerRadius="10"
+                   BackgroundColor="#FFFFFF"
+                   Padding="5"
+                   HeightRequest="200"
+                   WidthRequest="200"
+                   HorizontalOptions="Center">
+                <Image Source="qrcodeplaceholder.png" Aspect="AspectFit" />
+            </Frame>
+
+            <!-- Sla Op Button -->
+            <Frame CornerRadius="10"
+                   BackgroundColor="#98FBC5"
+                   Padding="5"
+                   HeightRequest="50"
+                   WidthRequest="300"
+                   HorizontalOptions="Center">
+                <Label Text="Sla Op"
+                       TextColor="#003131"
+                       FontSize="Large"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center" />
+            </Frame>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

@@ -54,8 +54,9 @@
                HorizontalOptions="Center"
                VerticalOptions="Center">
                     <Entry Placeholder="EMAIL"
-                   FontSize="16"
-                   Margin="0"
+                        PlaceholderColor="DarkGrey"
+                        FontSize="16"
+                        Margin="0"
                     />
             </Frame>
             <Frame
@@ -66,6 +67,7 @@
                 HorizontalOptions="Center"
                 VerticalOptions="Center">
                 <Entry Placeholder="PASSWORD"
+                    PlaceholderColor="DarkGrey"
                     FontSize="16"
                     IsPassword="True"
                     Margin="0"

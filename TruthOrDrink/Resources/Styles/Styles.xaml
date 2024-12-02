@@ -112,7 +112,7 @@
     </Style>
 
     <Style TargetType="Entry">
-
+        <Setter Property="PlaceholderColor" Value="DarkGrey"/>
         <Setter Property="TextColor" Value="#004D4D" />
         <Setter Property="Background" Value="#808080"/>
         <Setter Property="BackgroundColor" Value="Transparent" />
