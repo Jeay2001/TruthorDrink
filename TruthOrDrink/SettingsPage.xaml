@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TruthOrDrink.LoginPage"
+             x:Class="TruthOrDrink.SettingsPage"
              BackgroundColor="#004D4D">
     <!-- Main Grid Layout -->
     <Grid>
+
         <!-- Define rows: One for the settings button, one for the rest of the page -->
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -24,7 +25,6 @@
                 <ColumnDefinition Width="Auto" />
                 <!-- For the button -->
             </Grid.ColumnDefinitions>
-
             <Button ImageSource="returnicon.png"
                 BackgroundColor="Transparent"
                 Clicked="Return_Clicked"
@@ -36,63 +36,63 @@
                 WidthRequest="50"
                 Grid.Column="0" />
         </Grid>
-
         <VerticalStackLayout Grid.Row="2" Spacing="50" Padding="20" HorizontalOptions="Center" >
             <Image
-                Margin="0,50,0,0"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                Source="Truthordrink.png"
-                HeightRequest="185"
-                Aspect="AspectFit"
-                SemanticProperties.Description="Truth or drink Symbol" />
+            Margin="0,50,0,0"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Source="Truthordrink.png"
+            HeightRequest="185"
+            Aspect="AspectFit"
+            SemanticProperties.Description="Truth or drink Symbol" />
 
             <Frame
-               CornerRadius="25"
-               BackgroundColor="Transparent"
-               Padding="5"
-               HorizontalOptions="Center"
-               VerticalOptions="Center">
-                    <Entry Placeholder="EMAIL"
-                   FontSize="16"
-                   Margin="0"
-                    />
-            </Frame>
-            <Frame
-                Margin="0,-50"
-                CornerRadius="25"
-                BackgroundColor="Transparent"
-                Padding="5"
-                HorizontalOptions="Center"
-                VerticalOptions="Center">
-                <Entry Placeholder="PASSWORD"
-                    FontSize="16"
-                    IsPassword="True"
-                    Margin="0"
-                    />  
-            </Frame>
-            <Button Text="Log In"
-                Margin="0,40,0,0"
+            Margin="0,-40,0,0"
+            CornerRadius="10"
+            Background="#98FBC5"
+            Padding="5"
+            HeightRequest="50"
+            WidthRequest="300"
+            HorizontalOptions="Center"
+            BackgroundColor="Transparent">
+                <Label Text="Truth Or Drink"
+                    TextColor="#003131"
                 FontSize="Large"
-                BackgroundColor="#FF6F61"
+                HorizontalOptions="Center"
+                FontAttributes="Bold" />
+            </Frame>
+            
+            <Frame
+                Margin="0,-40,0,0"
                 CornerRadius="10"
+                Background="#FF6F61"
+                Padding="5"
                 HeightRequest="50"
                 WidthRequest="300"
-                FontAttributes="Bold"
                 HorizontalOptions="Center"
-                Clicked="Login_Clicked"/>
-            
-            <Button Text="Registreren"
-                Margin="0,-40,0,0"
-                FontSize="Large"
-                BackgroundColor="#98FBC5"
-                CornerRadius="10"
-                HeightRequest="50"
-                WidthRequest="150"
-                FontAttributes="Bold"
-                HorizontalOptions="Center"
-                Clicked="Register_Clicked"/>
+                BackgroundColor="Transparent">
+                <Label Text="Name"
+                    TextColor="#003131"
+                    FontSize="Large"
+                    HorizontalOptions="Center"
+                    FontAttributes="Bold" />
+            </Frame>
 
+            <Frame
+                Margin="0,-40,0,0"
+                CornerRadius="10"
+                Background="#98FBC5"
+                Padding="5"
+                HeightRequest="50"
+                WidthRequest="300"
+                HorizontalOptions="Center"
+                BackgroundColor="Transparent">
+                <Label Text="Email"
+                    TextColor="#003131"
+                    FontSize="Large"
+                    HorizontalOptions="Center"
+                    FontAttributes="Bold" />
+            </Frame>
         </VerticalStackLayout>
     </Grid>
 </ContentPage>

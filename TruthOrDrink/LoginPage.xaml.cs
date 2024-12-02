@@ -7,7 +7,7 @@ public partial class LoginPage : ContentPage
 		InitializeComponent();
 	}
 
-    private async void Button_Clicked(object sender, EventArgs e)
+    private async void Return_Clicked(object sender, EventArgs e)
     {
         await Navigation.PushModalAsync(new MainPage());
     }
@@ -17,9 +17,9 @@ public partial class LoginPage : ContentPage
         await Navigation.PushModalAsync(new MainPage());
     }
 
-    private void Register_Clicked(object sender, EventArgs e)
+    private async void Register_Clicked(object sender, EventArgs e)
     {
-        //await Navigation.PushModalAsync(new Geregistreerd());
+        await Navigation.PushModalAsync(new RegisterPage());
     }
 
 }
