@@ -6,4 +6,9 @@ public partial class GamePage : ContentPage
 	{
 		InitializeComponent();
 	}
+    protected override bool OnBackButtonPressed()
+    {
+        // Prevent going back to InstructiePage
+        return true;
+    }
 }

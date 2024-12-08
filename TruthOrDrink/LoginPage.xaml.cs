@@ -6,6 +6,11 @@ public partial class LoginPage : ContentPage
 	{
 		InitializeComponent();
 	}
+    protected override bool OnBackButtonPressed()
+    {
+        // Prevent going back to InstructiePage
+        return true;
+    }
 
     private async void Return_Clicked(object sender, EventArgs e)
     {
