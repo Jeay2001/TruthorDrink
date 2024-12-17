@@ -4,8 +4,8 @@
              x:Class="TruthOrDrink.Instructiepage"
              BackgroundColor="#004D4D"
              >
-    <Grid Padding="20">
-        <ScrollView>
+    <ScrollView>
+        <Grid Padding="20">
             <VerticalStackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Spacing="15">
                 
                 <!-- Titel -->
@@ -102,6 +102,6 @@
                     
                     Margin="0,20,0,0"/>
             </VerticalStackLayout>
-        </ScrollView>
-    </Grid>
+        </Grid>
+    </ScrollView>
 </ContentPage>

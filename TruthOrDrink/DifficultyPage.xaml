@@ -3,134 +3,137 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TruthOrDrink.DifficultyPage"
              BackgroundColor="#004D4D">
-    <Grid>
-
-        <!-- Define rows: One for the header, one for difficulty and category selection, and one for buttons -->
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-        <Button ImageSource="returnicon.png"
-            BackgroundColor="Transparent"
-            Clicked="Return_Clicked"
-            HorizontalOptions="Start"
-            VerticalOptions="Start"
-            Padding="5"
-            CornerRadius="25"
-            HeightRequest="40"
-            WidthRequest="50" />
-
-        <!-- Header with logo -->
+    
+    <ScrollView>
         <Grid>
-            <Image
-                Margin="0,50,0,0"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                Source="Truthordrink.png"
-                HeightRequest="185"
-                Aspect="AspectFit"
-                SemanticProperties.Description="Truth or drink Symbol" />
+
+            <!-- Define rows: One for the header, one for difficulty and category selection, and one for buttons -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Button ImageSource="returnicon.png"
+                BackgroundColor="Transparent"
+                Clicked="Return_Clicked"
+                HorizontalOptions="Start"
+                VerticalOptions="Start"
+                Padding="5"
+                CornerRadius="25"
+                HeightRequest="40"
+                WidthRequest="50" />
+
+            <!-- Header with logo -->
+            <Grid>
+                <Image
+                    Margin="0,50,0,0"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Source="Truthordrink.png"
+                    HeightRequest="185"
+                    Aspect="AspectFit"
+                    SemanticProperties.Description="Truth or drink Symbol" />
+            </Grid>
+
+            <!-- Difficulty Level -->
+            <VerticalStackLayout Grid.Row="1" Spacing="20" Padding="20" HorizontalOptions="Center">
+                <!-- Kies Categorie Picker -->
+                <Frame CornerRadius="10"
+                   BackgroundColor="#FF6F61"
+                   Padding="5"
+                   HeightRequest="60"
+                   WidthRequest="300"
+                   HorizontalOptions="Center">
+                    <Picker Title="Kies Categorie"
+                        TextColor="#003131"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        BackgroundColor="Transparent"
+                        HorizontalOptions="Center">
+                        <Picker.Items>
+                            <x:String>Categorie 1</x:String>
+                            <x:String>Categorie 2</x:String>
+                            <x:String>Categorie 3</x:String>
+                            <x:String>Categorie 4</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </Frame>
+                <Frame CornerRadius="10"
+                   BackgroundColor="#98FBC5"
+                   Padding="5"
+                   HeightRequest="60"
+                   WidthRequest="300"
+                   HorizontalOptions="Center">
+                    <Picker Title="Select Difficulty"
+                        TextColor="#003131"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        BackgroundColor="Transparent"
+                        HorizontalOptions="Center">
+                        <Picker.Items>
+                            <x:String>1</x:String>
+                            <x:String>2</x:String>
+                            <x:String>3</x:String>
+                            <x:String>4</x:String>
+                            <x:String>5</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </Frame>
+                <Frame CornerRadius="10"
+           BackgroundColor="#98FBC5"
+           Padding="10"
+           HeightRequest="300"
+           WidthRequest="300"
+           HorizontalOptions="Center">
+                    <VerticalStackLayout Spacing="10" HorizontalOptions="Center">
+                        <Label Text="Add Friends to Match"
+                   TextColor="#003131"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+                        <!-- CollectionView for hardcoded friend list -->
+                        <CollectionView HeightRequest="200">
+                            <CollectionView.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Bono</x:String>
+                                    <x:String>Lorenzo</x:String>
+                                    <x:String>Roel</x:String>
+                                    <x:String>Floyd</x:String>
+                                    <x:String>Lucas</x:String>
+                                </x:Array>
+                            </CollectionView.ItemsSource>
+
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                                        <CheckBox />
+                                        <Label Text="{Binding}" 
+                                   TextColor="#003131" 
+                                   FontSize="Medium" 
+                                   VerticalOptions="Center" />
+                                    </HorizontalStackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </VerticalStackLayout>
+                </Frame>
+                
+                <Button Text="BEGIN GAME!" 
+                    BackgroundColor="#FF6F61" 
+                    TextColor="#003131" 
+                    FontSize="Large" 
+                    FontAttributes="Bold" 
+                    HorizontalOptions="Center" 
+                    VerticalOptions="Center" 
+                    HeightRequest="50" 
+                    WidthRequest="200"
+                    CornerRadius="10"
+                    Clicked="Begin_Clicked"/>
+
+            </VerticalStackLayout>
+
+          
         </Grid>
-
-        <!-- Difficulty Level -->
-        <VerticalStackLayout Grid.Row="1" Spacing="20" Padding="20" HorizontalOptions="Center">
-            <!-- Kies Categorie Picker -->
-            <Frame CornerRadius="10"
-               BackgroundColor="#FF6F61"
-               Padding="5"
-               HeightRequest="60"
-               WidthRequest="300"
-               HorizontalOptions="Center">
-                <Picker Title="Kies Categorie"
-                    TextColor="#003131"
-                    FontSize="Large"
-                    FontAttributes="Bold"
-                    BackgroundColor="Transparent"
-                    HorizontalOptions="Center">
-                    <Picker.Items>
-                        <x:String>Categorie 1</x:String>
-                        <x:String>Categorie 2</x:String>
-                        <x:String>Categorie 3</x:String>
-                        <x:String>Categorie 4</x:String>
-                    </Picker.Items>
-                </Picker>
-            </Frame>
-            <Frame CornerRadius="10"
-               BackgroundColor="#98FBC5"
-               Padding="5"
-               HeightRequest="60"
-               WidthRequest="300"
-               HorizontalOptions="Center">
-                <Picker Title="Select Difficulty"
-                    TextColor="#003131"
-                    FontSize="Large"
-                    FontAttributes="Bold"
-                    BackgroundColor="Transparent"
-                    HorizontalOptions="Center">
-                    <Picker.Items>
-                        <x:String>1</x:String>
-                        <x:String>2</x:String>
-                        <x:String>3</x:String>
-                        <x:String>4</x:String>
-                        <x:String>5</x:String>
-                    </Picker.Items>
-                </Picker>
-            </Frame>
-            <Frame CornerRadius="10"
-       BackgroundColor="#98FBC5"
-       Padding="10"
-       HeightRequest="300"
-       WidthRequest="300"
-       HorizontalOptions="Center">
-                <VerticalStackLayout Spacing="10" HorizontalOptions="Center">
-                    <Label Text="Add Friends to Match"
-               TextColor="#003131"
-               FontSize="Large"
-               FontAttributes="Bold"
-               HorizontalOptions="Center" />
-
-                    <!-- CollectionView for hardcoded friend list -->
-                    <CollectionView HeightRequest="200">
-                        <CollectionView.ItemsSource>
-                            <x:Array Type="{x:Type x:String}">
-                                <x:String>Bono</x:String>
-                                <x:String>Lorenzo</x:String>
-                                <x:String>Roel</x:String>
-                                <x:String>Floyd</x:String>
-                                <x:String>Lucas</x:String>
-                            </x:Array>
-                        </CollectionView.ItemsSource>
-
-                        <CollectionView.ItemTemplate>
-                            <DataTemplate>
-                                <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
-                                    <CheckBox />
-                                    <Label Text="{Binding}" 
-                               TextColor="#003131" 
-                               FontSize="Medium" 
-                               VerticalOptions="Center" />
-                                </HorizontalStackLayout>
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
-                    </CollectionView>
-                </VerticalStackLayout>
-            </Frame>
-            
-            <Button Text="BEGIN GAME!" 
-                BackgroundColor="#FF6F61" 
-                TextColor="#003131" 
-                FontSize="Large" 
-                FontAttributes="Bold" 
-                HorizontalOptions="Center" 
-                VerticalOptions="Center" 
-                HeightRequest="50" 
-                WidthRequest="200"
-                CornerRadius="10"
-                Clicked="Begin_Clicked"/>
-
-        </VerticalStackLayout>
-
-      
-    </Grid>
+    </ScrollView>
 </ContentPage>

@@ -4,22 +4,23 @@
              x:Class="TruthOrDrink.VragenlijstPage"
              BackgroundColor="#004D4D">
 
-    <!-- Main Grid Layout -->
-    <Grid>
+    <!-- Main Scroll View -->
+    <ScrollView>
+        <!-- Main Grid Layout -->
+        <Grid>
 
-        <!-- Back Button -->
-        <Button ImageSource="returnicon.png"
-                BackgroundColor="Transparent"
-                Clicked="Return_Clicked"
-                HorizontalOptions="Start"
-                VerticalOptions="Start"
-                Padding="5"
-                CornerRadius="25"
-                HeightRequest="40"
-                WidthRequest="50" />
+            <!-- Back Button -->
+            <Button ImageSource="returnicon.png"
+                    BackgroundColor="Transparent"
+                    Clicked="Return_Clicked"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"
+                    Padding="5"
+                    CornerRadius="25"
+                    HeightRequest="40"
+                    WidthRequest="50" />
 
-        <!-- Main Content -->
-        
+            <!-- Main Content -->
             <VerticalStackLayout Spacing="30" Padding="20" HorizontalOptions="Center" VerticalOptions="Start" Margin="0,50,0,0">
                 <!-- Logo -->
                 <Image Source="Truthordrink.png"
@@ -51,8 +52,6 @@
                         FontSize="16"
                         Margin="0"/>
                 </Frame>
-
-                
 
                 <!-- Kies Categorie Picker -->
                 <Frame CornerRadius="10"
@@ -111,5 +110,6 @@
 
             </VerticalStackLayout>
         
-    </Grid>
+        </Grid>
+    </ScrollView>
 </ContentPage>

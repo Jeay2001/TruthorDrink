@@ -3,98 +3,100 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TruthOrDrink.LoginPage"
              BackgroundColor="#004D4D">
-    <!-- Main Grid Layout -->
-    <Grid>
-        <!-- Define rows: One for the settings button, one for the rest of the page -->
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-
-        <!-- Define a single column -->
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-
-        <!-- Settings Button in the top-right -->
+    <ScrollView>
+        <!-- Main Grid Layout -->
         <Grid>
+            <!-- Define rows: One for the settings button, one for the rest of the page -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- Define a single column -->
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
-                <!-- Placeholder for spacing -->
-                <ColumnDefinition Width="Auto" />
-                <!-- For the button -->
             </Grid.ColumnDefinitions>
 
-            <Button ImageSource="returnicon.png"
-                BackgroundColor="Transparent"
-                Clicked="Return_Clicked"
-                HorizontalOptions="Start"
-                VerticalOptions="Start"
-                Padding="5"
-                CornerRadius="25"
-                HeightRequest="40"
-                WidthRequest="50"
-                Grid.Column="0" />
-        </Grid>
+            <!-- Settings Button in the top-right -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <!-- Placeholder for spacing -->
+                    <ColumnDefinition Width="Auto" />
+                    <!-- For the button -->
+                </Grid.ColumnDefinitions>
 
-        <VerticalStackLayout Grid.Row="2" Spacing="50" Padding="20" HorizontalOptions="Center" >
-            <Image
-                Margin="0,50,0,0"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                Source="Truthordrink.png"
-                HeightRequest="185"
-                Aspect="AspectFit"
-                SemanticProperties.Description="Truth or drink Symbol" />
+                <Button ImageSource="returnicon.png"
+                    BackgroundColor="Transparent"
+                    Clicked="Return_Clicked"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"
+                    Padding="5"
+                    CornerRadius="25"
+                    HeightRequest="40"
+                    WidthRequest="50"
+                    Grid.Column="0" />
+            </Grid>
 
-            <Frame
-               CornerRadius="25"
-               BackgroundColor="Transparent"
-               Padding="5"
-               HorizontalOptions="Center"
-               VerticalOptions="Center">
-                    <Entry Placeholder="EMAIL"
+            <VerticalStackLayout Grid.Row="2" Spacing="50" Padding="20" HorizontalOptions="Center" >
+                <Image
+                    Margin="0,50,0,0"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Source="Truthordrink.png"
+                    HeightRequest="185"
+                    Aspect="AspectFit"
+                    SemanticProperties.Description="Truth or drink Symbol" />
+
+                <Frame
+                   CornerRadius="25"
+                   BackgroundColor="Transparent"
+                   Padding="5"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center">
+                        <Entry Placeholder="EMAIL"
+                            PlaceholderColor="DarkGrey"
+                            FontSize="16"
+                            Margin="0"
+                        />
+                </Frame>
+                <Frame
+                    Margin="0,-50"
+                    CornerRadius="25"
+                    BackgroundColor="Transparent"
+                    Padding="5"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center">
+                    <Entry Placeholder="PASSWORD"
                         PlaceholderColor="DarkGrey"
                         FontSize="16"
+                        IsPassword="True"
                         Margin="0"
-                    />
-            </Frame>
-            <Frame
-                Margin="0,-50"
-                CornerRadius="25"
-                BackgroundColor="Transparent"
-                Padding="5"
-                HorizontalOptions="Center"
-                VerticalOptions="Center">
-                <Entry Placeholder="PASSWORD"
-                    PlaceholderColor="DarkGrey"
-                    FontSize="16"
-                    IsPassword="True"
-                    Margin="0"
-                    />  
-            </Frame>
-            <Button Text="Log In"
-                Margin="0,40,0,0"
-                FontSize="Large"
-                BackgroundColor="#FF6F61"
-                CornerRadius="10"
-                HeightRequest="50"
-                WidthRequest="300"
-                FontAttributes="Bold"
-                HorizontalOptions="Center"
-                Clicked="Login_Clicked"/>
-            
-            <Button Text="Registreren"
-                Margin="0,-40,0,0"
-                FontSize="Large"
-                BackgroundColor="#98FBC5"
-                CornerRadius="10"
-                HeightRequest="50"
-                WidthRequest="150"
-                FontAttributes="Bold"
-                HorizontalOptions="Center"
-                Clicked="Register_Clicked"/>
+                        />  
+                </Frame>
+                <Button Text="Log In"
+                    Margin="0,40,0,0"
+                    FontSize="Large"
+                    BackgroundColor="#FF6F61"
+                    CornerRadius="10"
+                    HeightRequest="50"
+                    WidthRequest="300"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    Clicked="Login_Clicked"/>
+                
+                <Button Text="Registreren"
+                    Margin="0,-40,0,0"
+                    FontSize="Large"
+                    BackgroundColor="#98FBC5"
+                    CornerRadius="10"
+                    HeightRequest="50"
+                    WidthRequest="150"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    Clicked="Register_Clicked"/>
 
-        </VerticalStackLayout>
-    </Grid>
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
 </ContentPage>

@@ -4,64 +4,66 @@
              x:Class="TruthOrDrink.GeregistreerdPage"
              BackgroundColor="#004D4D">
     <!-- Main Grid Layout -->
-    <Grid>
-
-        <!-- Define rows: One for the settings button, one for the rest of the page -->
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-
-        <!-- Define a single column -->
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-
-        <!-- Settings Button in the top-right -->
+    <ScrollView>
         <Grid>
+
+            <!-- Define rows: One for the settings button, one for the rest of the page -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- Define a single column -->
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
-                <!-- Placeholder for spacing -->
-                <ColumnDefinition Width="Auto" />
-                <!-- For the button -->
             </Grid.ColumnDefinitions>
-        </Grid>
-        <VerticalStackLayout Grid.Row="2" Spacing="50" Padding="20" HorizontalOptions="Center" >
-            <Image
-                Margin="0,50,0,0"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                Source="Truthordrink.png"
-                HeightRequest="185"
-                Aspect="AspectFit"
-                SemanticProperties.Description="Truth or drink Symbol" />
 
-            <Frame
-                Margin="0,-40,0,0"
-                CornerRadius="10"
-                Background="#98FBC5"
-                Padding="5"
-                HeightRequest="50"
-                WidthRequest="300"
-                HorizontalOptions="Center"
-                BackgroundColor="Transparent">
-                <Label Text="Je bent Geregistreerd"
-                        TextColor="#003131"
-                    FontSize="Large"
+            <!-- Settings Button in the top-right -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <!-- Placeholder for spacing -->
+                    <ColumnDefinition Width="Auto" />
+                    <!-- For the button -->
+                </Grid.ColumnDefinitions>
+            </Grid>
+            <VerticalStackLayout Grid.Row="2" Spacing="50" Padding="20" HorizontalOptions="Center" >
+                <Image
+                    Margin="0,50,0,0"
                     HorizontalOptions="Center"
-                    FontAttributes="Bold" />
-            </Frame>
+                    VerticalOptions="Center"
+                    Source="Truthordrink.png"
+                    HeightRequest="185"
+                    Aspect="AspectFit"
+                    SemanticProperties.Description="Truth or drink Symbol" />
 
-            <Button Text="Home Page"
-                Margin="0,40,0,0"
-                FontSize="Large"
-                BackgroundColor="#FF6F61"
-                CornerRadius="10"
-                HeightRequest="50"
-                WidthRequest="300"
-                FontAttributes="Bold"
-                HorizontalOptions="Center"
-                Clicked="Homepage_Clicked"/>
-        </VerticalStackLayout>
-    </Grid>
+                <Frame
+                    Margin="0,-40,0,0"
+                    CornerRadius="10"
+                    Background="#98FBC5"
+                    Padding="5"
+                    HeightRequest="50"
+                    WidthRequest="300"
+                    HorizontalOptions="Center"
+                    BackgroundColor="Transparent">
+                    <Label Text="Je bent Geregistreerd"
+                            TextColor="#003131"
+                        FontSize="Large"
+                        HorizontalOptions="Center"
+                        FontAttributes="Bold" />
+                </Frame>
+
+                <Button Text="Home Page"
+                    Margin="0,40,0,0"
+                    FontSize="Large"
+                    BackgroundColor="#FF6F61"
+                    CornerRadius="10"
+                    HeightRequest="50"
+                    WidthRequest="300"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    Clicked="Homepage_Clicked"/>
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
 </ContentPage>
