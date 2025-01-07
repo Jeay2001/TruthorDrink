@@ -23,6 +23,7 @@ namespace TruthOrDrink.MVVM.Models
 
         public int FriendId { get; set; }
 
+        [Ignore]
         public List<User> Friends { get; set; }
     }
 }

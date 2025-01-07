@@ -12,8 +12,9 @@ namespace TruthOrDrink.MVVM.Models
     [Table("Game")]
     public class Game : TableData
     {
-      
+        [Ignore]
         public List<User>? Players { get; set; }
+        [Ignore]
         public Category? Category { get; set; }
     }
 }

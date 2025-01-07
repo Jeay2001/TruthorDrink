@@ -73,6 +73,20 @@
                         Margin="0"
                         />
                 </Frame>
+                <Frame
+                    Margin="0,-50"
+                    CornerRadius="25"
+                    BackgroundColor="Transparent"
+                    Padding="5"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center">
+                    <Entry Placeholder=" HERHAAL PASSWORD"
+                        PlaceholderColor="DarkGrey"
+                        FontSize="16"
+                        IsPassword="True"
+                        Margin="0"
+                    />
+                </Frame>
                 <Button Text="Registreren"
                     Margin="0,40,0,0"
                     FontSize="Large"

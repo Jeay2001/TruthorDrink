@@ -14,6 +14,8 @@ namespace TruthOrDrink.MVVM.Models
     {
       
         public string QuestionText { get; set; }
+
+        [Ignore]
         public Category category { get; set; }
     }
 }

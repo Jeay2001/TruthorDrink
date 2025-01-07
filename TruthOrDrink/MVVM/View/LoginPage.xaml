@@ -55,6 +55,7 @@
                    HorizontalOptions="Center"
                    VerticalOptions="Center">
                         <Entry Placeholder="EMAIL"
+                            x:Name="EmailEntry"
                             PlaceholderColor="DarkGrey"
                             FontSize="16"
                             Margin="0"
@@ -68,21 +69,16 @@
                     HorizontalOptions="Center"
                     VerticalOptions="Center">
                     <Entry Placeholder="PASSWORD"
+                        x:Name="PasswordEntry"
                         PlaceholderColor="DarkGrey"
                         FontSize="16"
                         IsPassword="True"
                         Margin="0"
                         />  
                 </Frame>
-                <Button Text="Log In"
-                    Margin="0,40,0,0"
-                    FontSize="Large"
-                    BackgroundColor="#FF6F61"
-                    CornerRadius="10"
-                    HeightRequest="50"
-                    WidthRequest="300"
-                    FontAttributes="Bold"
-                    HorizontalOptions="Center"
+                <Button Text="Login" BackgroundColor="#FF6F61" 
+                    CornerRadius="10" HeightRequest="50" 
+                    FontAttributes="Bold" 
                     Clicked="Login_Clicked"/>
                 
                 <Button Text="Registreren"

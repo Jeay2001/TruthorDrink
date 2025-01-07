@@ -17,6 +17,7 @@ namespace TruthOrDrink.MVVM.Models
         [Column("Difficulty")]
         public int Difficulty { get; set; }
 
+        [Ignore]
         public List<Question>? Questions { get; set; }
     }
 }
