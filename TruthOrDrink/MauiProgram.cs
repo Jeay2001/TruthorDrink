@@ -1,5 +1,7 @@
 ﻿using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
+using TruthOrDrink.MVVM.Models;
+using TruthOrDrink.Repositories;
 
 namespace TruthOrDrink
 {
@@ -19,6 +21,10 @@ namespace TruthOrDrink
                 });
             builder.Services.AddSingleton<MainPage>();
             builder.Services.AddSingleton<Instructiepage>();
+            builder.Services.AddSingleton<BaseRepository<User>>();
+            builder.Services.AddSingleton<BaseRepository<Question>>();
+            builder.Services.AddSingleton<BaseRepository<Game>>();
+            builder.Services.AddSingleton<BaseRepository<Category>>();
 
 #if DEBUG
             builder.Logging.AddDebug();

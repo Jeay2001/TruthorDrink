@@ -1,18 +1,16 @@
 ﻿using SQLite;
 using System;
 using System.Collections.Generic;
-using
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TruthOrDrink.Abstractions;
 
 namespace TruthOrDrink.MVVM.Models
 {
     [Table("Category")]
-    public class Category
+    public class Category : TableData
     {
-        public int Id { get; set; }
-
         [Column("Name"), Indexed, NotNull]
         public string Name { get; set; }
 

@@ -4,14 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SQLite;
+using TruthOrDrink.Abstractions;
 
 namespace TruthOrDrink.MVVM.Models
 {
     [Table("User")]
-    public class User
+    public class User : TableData
     {
-        [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
 
         [Column("Name"), Indexed, NotNull]
         public string Name { get; set; }
