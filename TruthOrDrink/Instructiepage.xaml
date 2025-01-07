@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mct="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
              x:Class="TruthOrDrink.Instructiepage"
-             BackgroundColor="#004D4D"
-             >
+             BackgroundColor="#004D4D">
+    <ContentPage.Behaviors>
+        <mct:StatusBarBehavior StatusBarColor="Transparent" StatusBarStyle="DarkContent"/>
+    </ContentPage.Behaviors>
     <ScrollView>
         <Grid Padding="20">
             <VerticalStackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Spacing="15">

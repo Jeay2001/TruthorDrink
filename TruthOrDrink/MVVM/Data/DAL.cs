@@ -5,25 +5,25 @@ using System.Text;
 using System.Threading.Tasks;
 using SQLite;
 
-namespace TruthOrDrink.Data
+namespace TruthOrDrink.MVVM.Data
 {
     public static class Constants
     {
         public const string DBFilename = "TruthOrDrink.db3";
 
-        public const SQLite.SQLiteOpenFlags Flags =
+        public const SQLiteOpenFlags Flags =
             // open the database in read/write mode
-            SQLite.SQLiteOpenFlags.ReadWrite |
+            SQLiteOpenFlags.ReadWrite |
             // create the database if it doesn't exist
-            SQLite.SQLiteOpenFlags.Create |
+            SQLiteOpenFlags.Create |
             // enable multi-threaded database access
-            SQLite.SQLiteOpenFlags.SharedCache;
+            SQLiteOpenFlags.SharedCache;
         public static string DatabasePath
+        {
+            get
             {
-                get
-                {
-                    return Path.Combine(FileSystem.AppDataDirectory, DBFilename);
-                }
+                return Path.Combine(FileSystem.AppDataDirectory, DBFilename);
             }
+        }
     }
 }
