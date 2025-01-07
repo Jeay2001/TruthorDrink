@@ -17,14 +17,14 @@ namespace TruthOrDrink
             GameRepo = gameRepo;
             QuestionRepo = questionRepo;
             CategoryRepo = categoryRepo;
-            // Create a hardcoded user (only done once for testing purposes)
-            User hardcodedUser = new User
-            {
-                Name = "TestUser",
-                Email = "test",
-                Password = "test"
-            };
-            App.UserRepo?.SaveEntity(hardcodedUser);
+            //// Create a hardcoded user (only done once for testing purposes)
+            //User hardcodedUser = new User
+            //{
+            //    Name = "TestUser",
+            //    Email = "test",
+            //    Password = "test"
+            //};
+            //App.UserRepo?.SaveEntity(hardcodedUser);
             // Set the MainPage to Instructiepage directly
             MainPage = new Instructiepage();
         }

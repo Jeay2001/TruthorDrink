@@ -49,24 +49,39 @@
                 SemanticProperties.Description="Truth or drink Symbol" />
 
                 <Frame
+                    Margin="0,-40"
+                   CornerRadius="25"
+                   BackgroundColor="Transparent"
+                   Padding="5"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center">
+                    <Entry Placeholder="Name"
+                       x:Name="NameEntry"
+                       FontSize="16"
+                       Margin="0"
+                    />
+                </Frame>
+                <Frame
+                   Margin="0,0"
                    CornerRadius="25"
                    BackgroundColor="Transparent"
                    Padding="5"
                    HorizontalOptions="Center"
                    VerticalOptions="Center">
                     <Entry Placeholder="EMAIL"
+                       x:Name="EmailEntry"
                        FontSize="16"
                        Margin="0"
                         />
                 </Frame>
                 <Frame
-                    Margin="0,-50"
                     CornerRadius="25"
                     BackgroundColor="Transparent"
                     Padding="5"
                     HorizontalOptions="Center"
                     VerticalOptions="Center">
                     <Entry Placeholder="PASSWORD"
+                        x:Name="PasswordEntry"
                         PlaceholderColor="DarkGrey"
                         FontSize="16"
                         IsPassword="True"
@@ -81,6 +96,7 @@
                     HorizontalOptions="Center"
                     VerticalOptions="Center">
                     <Entry Placeholder=" HERHAAL PASSWORD"
+                        x:Name="ConfirmPasswordEntry"
                         PlaceholderColor="DarkGrey"
                         FontSize="16"
                         IsPassword="True"
