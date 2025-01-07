@@ -62,6 +62,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="Bogus" Version="35.6.1" />
 		<PackageReference Include="CommunityToolkit.Maui" Version="9.1.1" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
@@ -79,55 +80,55 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="QrcodePage.xaml.cs">
+	  <Compile Update="MVVM\View\QrcodePage.xaml.cs">
 	    <DependentUpon>QrcodePage.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="VriendelijstPage.xaml.cs">
+	  <Compile Update="MVVM\View\VriendelijstPage.xaml.cs">
 	    <DependentUpon>VriendelijstPage.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="VriendengezochtPage.xaml.cs">
+	  <Compile Update="MVVM\View\VriendengezochtPage.xaml.cs">
 	    <DependentUpon>VriendengezochtPage.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="VriendenzoekenPage.xaml.cs">
+	  <Compile Update="MVVM\View\VriendenzoekenPage.xaml.cs">
 	    <DependentUpon>VriendenzoekenPage.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="DifficultyPage.xaml">
+	  <MauiXaml Update="MVVM\View\DifficultyPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="GamePage.xaml">
+	  <MauiXaml Update="MVVM\View\GamePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="GeregistreerdPage.xaml">
+	  <MauiXaml Update="MVVM\View\GeregistreerdPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Instructiepage.xaml">
+	  <MauiXaml Update="MVVM\View\Instructiepage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="LoginPage.xaml">
+	  <MauiXaml Update="MVVM\View\LoginPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="QrcodePage.xaml">
+	  <MauiXaml Update="MVVM\View\QrcodePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="RegisterPage.xaml">
+	  <MauiXaml Update="MVVM\View\RegisterPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="SettingsPage.xaml">
+	  <MauiXaml Update="MVVM\View\SettingsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="VragenlijstPage.xaml">
+	  <MauiXaml Update="MVVM\View\VragenlijstPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="VriendelijstPage.xaml">
+	  <MauiXaml Update="MVVM\View\VriendelijstPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="VriendengezochtPage.xaml">
+	  <MauiXaml Update="MVVM\View\VriendengezochtPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="VriendenzoekenPage.xaml">
+	  <MauiXaml Update="MVVM\View\VriendenzoekenPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

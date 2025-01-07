@@ -7,6 +7,7 @@ using SQLite;
 
 namespace TruthOrDrink.MVVM.Models
 {
+    [Table("User")]
     public class User
     {
         [PrimaryKey, AutoIncrement]
