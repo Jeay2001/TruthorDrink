@@ -25,6 +25,7 @@ namespace TruthOrDrink
             builder.Services.AddSingleton<BaseRepository<Question>>();
             builder.Services.AddSingleton<BaseRepository<Game>>();
             builder.Services.AddSingleton<BaseRepository<Category>>();
+            builder.Services.AddSingleton<UserSessionRepository>();
 
 #if DEBUG
             builder.Logging.AddDebug();

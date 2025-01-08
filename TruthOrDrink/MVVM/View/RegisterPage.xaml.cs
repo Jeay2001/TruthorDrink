@@ -90,28 +90,11 @@ public partial class RegisterPage : ContentPage
             App.UserRepo.SaveEntity(newUser);
             await DisplayAlert("Success", "User registered successfully", "OK");
 
-            // Optionally navigate to the login page or other page
-            // Save login details after successful registration
-            await SaveLoginDetails(email, password);
             await Navigation.PushModalAsync(new LoginPage());
         }
         catch (Exception ex)
         {
             await DisplayAlert("Error", $"An error occurred: {ex.Message}", "OK");
-        }
-    }
-    private async Task SaveLoginDetails(string email, string password)
-    {
-        try
-        {
-            // Store email and password securely
-            await SecureStorage.SetAsync("email", email);
-            await SecureStorage.SetAsync("password", password);  // Note: For extra security, don't store raw passwords. Consider hashing them.
-        }
-        catch (Exception ex)
-        {
-            // Handle exception (e.g., SecureStorage might fail if the device doesn't support it)
-            await DisplayAlert("Error", $"Error storing credentials: {ex.Message}", "OK");
         }
     }
 }

@@ -20,7 +20,7 @@ namespace TruthOrDrink.MVVM.Models
         public string Email { get; set; }
 
         public string QrCode { get; set; }
-
+        
         public int FriendId { get; set; }
 
         [Ignore]

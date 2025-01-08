@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TruthOrDrink.Abstractions;
+using TruthOrDrink.MVVM.Models;
 
 namespace TruthOrDrink.Repositories
 {
