@@ -91,7 +91,7 @@ public partial class RegisterPage : ContentPage
             UserSession.Instance.SetUser(newUser.Id);
             await DisplayAlert("Success", "User registered successfully", "OK");
 
-            await Navigation.PushModalAsync(new LoginPage());
+            await Navigation.PushModalAsync(new GeregistreerdPage());
         }
         catch (Exception ex)
         {
