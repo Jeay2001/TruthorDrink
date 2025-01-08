@@ -8,20 +8,21 @@ public partial class Instructiepage : ContentPage
     public Instructiepage()
     {
         InitializeComponent();
-        //await Navigation.PushModalAsync(new LoginPage());
-        UserSession.Instance.Initialize();
+        //    //await Navigation.PushModalAsync(new LoginPage());
+        //    UserSession.Instance.Initialize();
 
-        if (UserSession.Instance.IsLoggedIn)
-        {
-            Task.Delay(100);
-            Navigation.PushAsync(new MainPage());
-        }
-        else
-        {
-            System.Diagnostics.Debug.WriteLine("User is not logged in.");
-            InitializeComponent();
-        }
+        //    if (UserSession.Instance.IsLoggedIn)
+        //    {
+        //        Task.Delay(100);
+        //        Navigation.PushAsync(new MainPage());
+        //    }
+        //    else
+        //    {
+        //        System.Diagnostics.Debug.WriteLine("User is not logged in.");
+        //        InitializeComponent();
+        //    }
 
+        //}
     }
 
 
@@ -57,14 +58,24 @@ public partial class Instructiepage : ContentPage
                 }
 
                 // Navigate to the main page
-                await Shell.Current.Navigation.PushModalAsync(new MainPage());
+                await Navigation.PushModalAsync(new MainPage());
                 System.Diagnostics.Debug.WriteLine("Navigation to MainPage initiated.");
             }
             else
             {
                 // If the user is not logged in, navigate to the login page
                 System.Diagnostics.Debug.WriteLine("User is not logged in, navigating to LoginPage.");
-                await Shell.Current.Navigation.PushModalAsync(new LoginPage());
+                try {
+                    await Navigation.PushModalAsync(new LoginPage());
+                }
+                catch (Exception ex)
+                {
+                    // Handle any exceptions that occur during the navigation process
+                    System.Diagnostics.Debug.WriteLine($"Error during navigation to LoginPage: {ex.Message}");
+                    System.Diagnostics.Debug.WriteLine($"Error during navigation to LoginPage: {ex.StackTrace}");
+                    // Optionally, show an alert to the user or take other actions
+                }               
+
             }
         }
         catch (Exception ex)

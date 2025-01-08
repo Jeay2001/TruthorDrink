@@ -30,6 +30,7 @@ public partial class LoginPage : ContentPage
         User? user = App.UserRepo?.GetEntities().FirstOrDefault(u => u.Email == email);
         if (user != null && user.Password == password)
         {
+            UserSession.Instance.SetUser(user.Id);
             // Successful login
             await DisplayAlert("Success", "You are logged in!", "OK");
 
