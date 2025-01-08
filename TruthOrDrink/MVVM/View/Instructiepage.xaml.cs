@@ -10,6 +10,7 @@ public partial class Instructiepage : ContentPage
         InitializeComponent();
         
 
+        //}
     }
 
 
@@ -54,8 +55,17 @@ public partial class Instructiepage : ContentPage
             {
                 // If the user is not logged in, navigate to the login page
                 System.Diagnostics.Debug.WriteLine("User is not logged in, navigating to LoginPage.");
-                
-                await Navigation.PushModalAsync(new LoginPage());
+                try {
+                    await Navigation.PushModalAsync(new LoginPage());
+                }
+                catch (Exception ex)
+                {
+                    // Handle any exceptions that occur during the navigation process
+                    System.Diagnostics.Debug.WriteLine($"Error during navigation to LoginPage: {ex.Message}");
+                    System.Diagnostics.Debug.WriteLine($"Error during navigation to LoginPage: {ex.StackTrace}");
+                    // Optionally, show an alert to the user or take other actions
+                }               
+
             }
         }
         catch (Exception ex)
