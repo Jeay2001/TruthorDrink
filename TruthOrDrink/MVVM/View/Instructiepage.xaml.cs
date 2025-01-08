@@ -8,19 +8,7 @@ public partial class Instructiepage : ContentPage
     public Instructiepage()
     {
         InitializeComponent();
-        //await Navigation.PushModalAsync(new LoginPage());
-        UserSession.Instance.Initialize();
-
-        if (UserSession.Instance.IsLoggedIn)
-        {
-            Task.Delay(100);
-            Navigation.PushAsync(new MainPage());
-        }
-        else
-        {
-            System.Diagnostics.Debug.WriteLine("User is not logged in.");
-            InitializeComponent();
-        }
+        
 
     }
 
@@ -31,6 +19,7 @@ public partial class Instructiepage : ContentPage
         {
             // Initialize UserSessionRepository to check if the user is logged in
             UserSessionRepository userSessionRepository = new UserSessionRepository();
+
             System.Diagnostics.Debug.WriteLine("UserSessionRepository initialized.");
 
             // Check if the user is logged in
@@ -40,6 +29,7 @@ public partial class Instructiepage : ContentPage
 
                 // Get the logged-in user ID
                 int userId = userSessionRepository.GetLoggedInUserId();
+
                 System.Diagnostics.Debug.WriteLine($"Retrieved logged-in userId: {userId}");
 
                 // Log the user in using UserSession
@@ -57,14 +47,15 @@ public partial class Instructiepage : ContentPage
                 }
 
                 // Navigate to the main page
-                await Shell.Current.Navigation.PushModalAsync(new MainPage());
+                await Navigation.PushModalAsync(new MainPage());
                 System.Diagnostics.Debug.WriteLine("Navigation to MainPage initiated.");
             }
             else
             {
                 // If the user is not logged in, navigate to the login page
                 System.Diagnostics.Debug.WriteLine("User is not logged in, navigating to LoginPage.");
-                await Shell.Current.Navigation.PushModalAsync(new LoginPage());
+                
+                await Navigation.PushModalAsync(new LoginPage());
             }
         }
         catch (Exception ex)

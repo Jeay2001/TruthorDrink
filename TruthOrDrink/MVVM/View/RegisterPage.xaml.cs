@@ -88,6 +88,7 @@ public partial class RegisterPage : ContentPage
         try
         {
             App.UserRepo.SaveEntity(newUser);
+            UserSession.Instance.SetUser(newUser.Id);
             await DisplayAlert("Success", "User registered successfully", "OK");
 
             await Navigation.PushModalAsync(new LoginPage());
