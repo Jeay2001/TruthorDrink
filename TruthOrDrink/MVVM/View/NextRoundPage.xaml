@@ -17,20 +17,41 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-
             <!-- Rest of the content below the settings button -->
             <VerticalStackLayout Grid.Row="2" Spacing="50" Padding="20" HorizontalOptions="Center">
+
+                <!-- Logo -->
                 <Image
-                Margin="0,0,0,0"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                Source="Truthordrink.png"
-                HeightRequest="185"
-                Aspect="AspectFit"
-                SemanticProperties.Description="Truth or drink Symbol" />
+                    Margin="0,0,0,0"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Source="Truthordrink.png"
+                    HeightRequest="185"
+                    Aspect="AspectFit"
+                    SemanticProperties.Description="Truth or drink Symbol" />
 
-               
-
+                <StackLayout Padding="20" Spacing="15">
+                    <Frame
+                        Margin="0,-40,0,0"
+                        CornerRadius="10"
+                        Background="#98FBC5"
+                        Padding="5"
+                        HeightRequest="60"
+                        WidthRequest="350"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        BackgroundColor="Transparent">
+                        <Label 
+                            x:Name="MemeName"
+                            TextColor="#003131"
+                            FontAttributes="Bold"
+                            FontSize="Large" 
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center" />
+                    </Frame>
+                    <Image x:Name="MemeImage" Aspect="AspectFit" />
+                </StackLayout>
+                
             </VerticalStackLayout>
         </Grid>
     </ScrollView>

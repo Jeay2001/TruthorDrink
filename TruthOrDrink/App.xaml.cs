@@ -1,4 +1,6 @@
-﻿using TruthOrDrink.MVVM.Models;
+﻿using TruthOrDrink.Abstractions;
+using TruthOrDrink.Logic;
+using TruthOrDrink.MVVM.Models;
 using TruthOrDrink.Repositories;
 
 namespace TruthOrDrink
@@ -12,6 +14,8 @@ namespace TruthOrDrink
         public App(BaseRepository<User> userRepo, BaseRepository<Game> gameRepo, BaseRepository<Question> questionRepo, BaseRepository<Category> categoryRepo)
         {
             InitializeComponent();
+
+            DependencyService.Register<IMemeService, MemeService>();
 
             UserRepo = userRepo;
             GameRepo = gameRepo;
