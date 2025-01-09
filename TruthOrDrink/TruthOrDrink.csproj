@@ -74,7 +74,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Logic\" />
 	  <Folder Include="Resources\AppIcon\" />
 	</ItemGroup>
 

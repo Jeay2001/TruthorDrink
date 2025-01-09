@@ -80,6 +80,7 @@ namespace TruthOrDrink.MVVM.ViewModel
 
                 await SecureStorage.SetAsync("email", Email);
                 await Application.Current.MainPage.DisplayAlert("Success", "Details updated successfully", "OK");
+                _mainPageViewModel.LoadUserName(); // Update the welcome text in MainPageViewModel
             }
         }
 

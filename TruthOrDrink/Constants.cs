@@ -9,7 +9,12 @@ namespace TruthOrDrink
 {
     public class Constants
     {
+        public const string MEME = "";
+
+
         public const string DBFilename = "TruthOrDrink.db3";
+
+
 
         public const SQLiteOpenFlags Flags =
             // open the database in read/write mode
