@@ -3,9 +3,11 @@ using System.Linq;
 using System.Windows.Input;
 using Microsoft.Maui.Storage;
 using TruthOrDrink.MVVM.Models;
+using PropertyChanged;
 
 namespace TruthOrDrink.MVVM.ViewModel
 {
+    [AddINotifyPropertyChangedInterface]
     public class MainPageViewModel : BindableObject
     {
         private string _welcomeText;
@@ -53,7 +55,7 @@ namespace TruthOrDrink.MVVM.ViewModel
             });
         }
 
-        private void LoadUserName()
+        public void LoadUserName()
         {
             try
             {
@@ -70,8 +72,10 @@ namespace TruthOrDrink.MVVM.ViewModel
 
         private void NavigateToSettings()
         {
-            _navigation.PushModalAsync(new SettingsPage());
+            var settingsViewModel = new SettingsViewModel(_navigation, this);  // Passing 'this' (MainPageViewModel) to SettingsViewModel
+            _navigation.PushModalAsync(new SettingsPage(this));  // Passing MainPageViewModel to SettingsPage
         }
+
 
         private void NavigateToVriendelijst()
         {

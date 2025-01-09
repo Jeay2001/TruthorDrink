@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:TruthOrDrink.MVVM.ViewModel"
              x:Class="TruthOrDrink.SettingsPage"
              BackgroundColor="#004D4D">
     <!-- Main Grid Layout -->
@@ -31,7 +32,7 @@
                 </Grid.ColumnDefinitions>
                 <Button ImageSource="returnicon.png"
                     BackgroundColor="Transparent"
-                    Clicked="Return_Clicked"
+                    Command="{Binding ReturnCommand}"
                     HorizontalOptions="Start"
                     VerticalOptions="Start"
                     Padding="5"
@@ -43,7 +44,7 @@
             
             <VerticalStackLayout Grid.Row="2" Spacing="50" Padding="20" HorizontalOptions="Center" >
                 <Image
-                Margin="0,50,0,0"
+                Margin="0,0,0,0"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 Source="Truthordrink.png"
@@ -56,27 +57,11 @@
                 CornerRadius="10"
                 Background="#98FBC5"
                 Padding="5"
-                HeightRequest="60"
+                HeightRequest="50"
                 WidthRequest="350"
                 HorizontalOptions="Center"
                 BackgroundColor="Transparent">
                     <Label Text="Truth Or Drink"
-                        TextColor="#003131"
-                    FontSize="Large"
-                    HorizontalOptions="Center"
-                    FontAttributes="Bold" />
-                </Frame>
-                
-                <Frame
-                    Margin="0,0,0,0"
-                    CornerRadius="10"
-                    Background="#FF6F61"
-                    Padding="5"
-                    HeightRequest="50"
-                    WidthRequest="300"
-                    HorizontalOptions="Center"
-                    BackgroundColor="Transparent">
-                    <Label Text="Placeholder for name"
                         TextColor="#003131"
                         FontSize="Large"
                         HorizontalOptions="Center"
@@ -86,18 +71,83 @@
                 <Frame
                     Margin="0,-20,0,0"
                     CornerRadius="10"
-                    Background="#98FBC5"
+                    Background="#FF6F61"
                     Padding="5"
-                    HeightRequest="50"
+                    HeightRequest="55"
                     WidthRequest="300"
                     HorizontalOptions="Center"
                     BackgroundColor="Transparent">
-                    <Label Text="Placeholder for Email"
+                    <Label Text="Name"
+                        VerticalOptions="Center"
                         TextColor="#003131"
                         FontSize="Large"
                         HorizontalOptions="Center"
                         FontAttributes="Bold" />
                 </Frame>
+                <Frame
+                    Margin="0,-45,0,0"
+                    CornerRadius="10"
+                    Background="#98FBC5"
+                    Padding="5"
+                    HeightRequest="55"
+                    WidthRequest="279"
+                    HorizontalOptions="Center"
+                    BackgroundColor="Transparent">
+                    <Entry Text="{Binding Name}"
+                        BackgroundColor="Transparent"
+                        Background="#98FBC5"
+                        TextColor="#003131"
+                        FontSize="18"
+                        HorizontalOptions="Center"
+                        FontAttributes="Bold"
+                        />
+                </Frame>
+
+
+                <Frame
+                    Margin="0,0,0,0"
+                    CornerRadius="10"
+                    Background="#FF6F61"
+                    Padding="5"
+                    HeightRequest="55"
+                    WidthRequest="300"
+                    HorizontalOptions="Center"
+                    BackgroundColor="Transparent">
+                    <Label Text="Email"
+                        VerticalOptions="Center"
+                        TextColor="#003131"
+                        FontSize="Large"
+                        HorizontalOptions="Center"
+                        FontAttributes="Bold" />
+                </Frame>
+                
+                <Frame
+                    Margin="0,-45,0,0"
+                    CornerRadius="10"
+                    Background="#98FBC5"
+                    Padding="5"
+                    HeightRequest="55"
+                    WidthRequest="279"
+                    HorizontalOptions="Center"
+                    BackgroundColor="Transparent">
+                    <Entry Text="{Binding Email}"
+                        BackgroundColor="Transparent"
+                        TextColor="#003131"
+                        Background="#98FBC5"
+                        FontSize="18"
+                        HorizontalOptions="Center"
+                        FontAttributes="Bold" />
+                </Frame>
+
+                <Button Text="Save"
+                        FontSize="Medium"
+                        BackgroundColor="#FF6F61"
+                        Margin="0,30,0,0"
+                        CornerRadius="10"
+                        HeightRequest="50"
+                        WidthRequest="300"
+                        HorizontalOptions="Center"
+                        Command="{Binding SaveCommand}" />
                 
             </VerticalStackLayout>
         </Grid>

@@ -2,12 +2,15 @@
 using System.Linq;
 using System.Windows.Input;
 using Microsoft.Maui.Storage;
+using PropertyChanged;
 using TruthOrDrink.MVVM.Models;
 
 namespace TruthOrDrink.MVVM.ViewModel
 {
+    [AddINotifyPropertyChangedInterface]
     class LoginViewModel
     {
+        public List<User> User { get; set; }
         public INavigation Navigation { get; set; }
 
         public ICommand LoginUser { get; set; }
@@ -59,6 +62,7 @@ namespace TruthOrDrink.MVVM.ViewModel
                 await Navigation.PushModalAsync(new RegisterPage());
             });
         }
+        
 
         private void SaveLoginDetails(string email, string password)
         {

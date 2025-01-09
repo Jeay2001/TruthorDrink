@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PropertyChanged;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ using TruthOrDrink.MVVM.Models;
 
 namespace TruthOrDrink.MVVM.ViewModel
 {
+    [AddINotifyPropertyChangedInterface]
     class RegisterViewModel
     {
         public INavigation Navigation { get; set; }

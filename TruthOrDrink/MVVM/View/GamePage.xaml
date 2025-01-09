@@ -59,7 +59,8 @@
                         VerticalOptions="Center" 
                         HeightRequest="150" 
                         WidthRequest="150" 
-                        CornerRadius="10" />
+                        CornerRadius="10"
+                        Clicked="Button_Clicked"/>
                 
                 <Frame 
                     Margin="0,0,0,0" 
@@ -85,7 +86,8 @@
                     VerticalOptions="Center" 
                     HeightRequest="150" 
                     WidthRequest="150" 
-                    CornerRadius="10" />
+                    CornerRadius="10"
+                    Clicked="Button_Clicked_1"/>
             </VerticalStackLayout>
         </Grid>
     </ScrollView>

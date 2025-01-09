@@ -31,6 +31,7 @@
         <Setter Property="FontAttributes" Value="Bold"/>
         <Setter Property="BorderWidth" Value="0"/>
         <Setter Property="CornerRadius" Value="8"/>
+        
         <Setter Property="Padding" Value="14,10"/>
         <Setter Property="MinimumHeightRequest" Value="44"/>
         <Setter Property="MinimumWidthRequest" Value="44"/>
@@ -115,6 +116,7 @@
         <Setter Property="PlaceholderColor" Value="DarkGrey"/>
         <Setter Property="TextColor" Value="#004D4D" />
         <Setter Property="Background" Value="#808080"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
         <Setter Property="BackgroundColor" Value="Transparent" />
         <Setter Property="FontFamily" Value="OpenSansRegular"/>
         <Setter Property="FontSize" Value="14" />

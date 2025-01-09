@@ -3,9 +3,11 @@ using System.Linq;
 using System.Windows.Input;
 using TruthOrDrink.MVVM.Models;
 using Microsoft.Maui.Storage;
+using PropertyChanged;
 
 namespace TruthOrDrink.MVVM.ViewModel
 {
+    [AddINotifyPropertyChangedInterface]
     class InstructiepageViewModel
     {
         public INavigation Navigation { get; set; }
