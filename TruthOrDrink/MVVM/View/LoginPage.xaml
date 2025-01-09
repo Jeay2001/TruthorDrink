@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TruthOrDrink.LoginPage"
+             xmlns:vm="clr-namespace:TruthOrDrink.MVVM.ViewModels"
              BackgroundColor="#004D4D">
     <ScrollView>
         <!-- Main Grid Layout -->
@@ -26,16 +27,6 @@
                     <!-- For the button -->
                 </Grid.ColumnDefinitions>
 
-                <Button ImageSource="returnicon.png"
-                    BackgroundColor="Transparent"
-                    Clicked="Return_Clicked"
-                    HorizontalOptions="Start"
-                    VerticalOptions="Start"
-                    Padding="5"
-                    CornerRadius="25"
-                    HeightRequest="40"
-                    WidthRequest="50"
-                    Grid.Column="0" />
             </Grid>
 
             <VerticalStackLayout Grid.Row="2" Spacing="50" Padding="20" HorizontalOptions="Center" >
@@ -56,6 +47,7 @@
                    VerticalOptions="Center">
                         <Entry Placeholder="EMAIL"
                             x:Name="EmailEntry"
+                            Text="{Binding Email}"
                             PlaceholderColor="DarkGrey"
                             FontSize="16"
                             Margin="0"
@@ -70,16 +62,24 @@
                     VerticalOptions="Center">
                     <Entry Placeholder="PASSWORD"
                         x:Name="PasswordEntry"
+                        Text="{Binding Password}"
                         PlaceholderColor="DarkGrey"
                         FontSize="16"
                         IsPassword="True"
                         Margin="0"
                         />  
                 </Frame>
-                <Button Text="Login" BackgroundColor="#FF6F61" 
-                    CornerRadius="10" HeightRequest="50" 
-                    FontAttributes="Bold" 
-                    Clicked="Login_Clicked"/>
+                <Button 
+                    Margin="0,20,0,0"
+                    Text="Login" 
+                    FontSize="Large"
+                    BackgroundColor="#FF6F61" 
+                    CornerRadius="10" 
+                    HeightRequest="50"
+                    WidthRequest="150"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    Command="{Binding LoginUser}"/>
                 
                 <Button Text="Registreren"
                     Margin="0,-40,0,0"
@@ -90,7 +90,7 @@
                     WidthRequest="150"
                     FontAttributes="Bold"
                     HorizontalOptions="Center"
-                    Clicked="Register_Clicked"/>
+                    Command="{Binding RegisterCommand}"/>
 
             </VerticalStackLayout>
         </Grid>

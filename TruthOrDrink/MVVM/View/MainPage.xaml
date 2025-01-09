@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:TruthOrDrink.MVVM.ViewModel"
              x:Class="TruthOrDrink.MainPage"
              BackgroundColor="#004D4D">
     
@@ -29,7 +30,7 @@
 
                 <Button ImageSource="settings.png"
                         BackgroundColor="Transparent"
-                        Clicked="Settings_Clicked"
+                        Command="{Binding SettingsCommand}"
                         HorizontalOptions="Start"
                         VerticalOptions="Start"
                         Padding="5"
@@ -49,6 +50,7 @@
                     HeightRequest="185"
                     Aspect="AspectFit"
                     SemanticProperties.Description="Truth or drink Symbol" />
+                
                 <!-- Welkom-tekst met afgeronde border -->
                 <Frame
                     Margin="0,-40,0,0"
@@ -59,7 +61,7 @@
                     WidthRequest="350"
                     HorizontalOptions="Center"
                     BackgroundColor="Transparent">
-                    <Label Text="Welkom, Jeay!"
+                    <Label Text="{Binding WelcomeText}"
                            TextColor="#003131"
                         FontSize="Large"
                         HorizontalOptions="Center"
@@ -75,7 +77,7 @@
                         HeightRequest="50"
                         WidthRequest="300"
                         HorizontalOptions="Center"
-                        Clicked="Vriendelijst_Clicked"/>
+                        Command="{Binding VriendelijstCommand}"/>
 
                 <!-- Maak eigen vragen knop -->
                 <Button Text="Maak eigen vragen"
@@ -85,7 +87,7 @@
                         CornerRadius="10"
                         HeightRequest="50"
                         WidthRequest="300"
-                        Clicked="Vragenlijst_Clicked"
+                        Command="{Binding VragenlijstCommand}"
                         HorizontalOptions="Center" />
 
                 <!-- Start game knop -->
@@ -97,7 +99,7 @@
                         HeightRequest="60"
                         WidthRequest="350"
                         FontAttributes="Bold"
-                        Clicked="Difficulty_Clicked"
+                        Command="{Binding DifficultyCommand}"
                         HorizontalOptions="Center" />
 
             </VerticalStackLayout>

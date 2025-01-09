@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TruthOrDrink.RegisterPage"
+             xmlns:vm="clr-namespace:TruthOrDrink.MVVM.ViewModels"
              BackgroundColor="#004D4D">
     <ScrollView>
         <!-- Main Grid Layout -->
@@ -29,7 +30,7 @@
 
                 <Button ImageSource="returnicon.png"
                 BackgroundColor="Transparent"
-                Clicked="Return_Clicked"
+                Command="{Binding ReturnCommand}"
                 HorizontalOptions="Start"
                 VerticalOptions="Start"
                 Padding="5"
@@ -49,7 +50,7 @@
                 SemanticProperties.Description="Truth or drink Symbol" />
 
                 <Frame
-                    Margin="0,-40"
+                    Margin="0,-40,0,0"
                    CornerRadius="25"
                    BackgroundColor="Transparent"
                    Padding="5"
@@ -57,12 +58,13 @@
                    VerticalOptions="Center">
                     <Entry Placeholder="Name"
                        x:Name="NameEntry"
+                       Text="{Binding Name}"
                        FontSize="16"
                        Margin="0"
                     />
                 </Frame>
                 <Frame
-                   Margin="0,0"
+                   Margin="0,-50,0,0"
                    CornerRadius="25"
                    BackgroundColor="Transparent"
                    Padding="5"
@@ -70,11 +72,13 @@
                    VerticalOptions="Center">
                     <Entry Placeholder="EMAIL"
                        x:Name="EmailEntry"
+                       Text="{Binding Email}"
                        FontSize="16"
                        Margin="0"
                         />
                 </Frame>
                 <Frame
+                    Margin="0,-40,0,0"
                     CornerRadius="25"
                     BackgroundColor="Transparent"
                     Padding="5"
@@ -83,13 +87,14 @@
                     <Entry Placeholder="PASSWORD"
                         x:Name="PasswordEntry"
                         PlaceholderColor="DarkGrey"
+                        Text="{Binding Password}"
                         FontSize="16"
                         IsPassword="True"
                         Margin="0"
                         />
                 </Frame>
                 <Frame
-                    Margin="0,-50"
+                    Margin="0,-50,0,0"
                     CornerRadius="25"
                     BackgroundColor="Transparent"
                     Padding="5"
@@ -97,6 +102,7 @@
                     VerticalOptions="Center">
                     <Entry Placeholder=" HERHAAL PASSWORD"
                         x:Name="ConfirmPasswordEntry"
+                        Text="{Binding ConfirmPassword}"
                         PlaceholderColor="DarkGrey"
                         FontSize="16"
                         IsPassword="True"
@@ -104,7 +110,7 @@
                     />
                 </Frame>
                 <Button Text="Registreren"
-                    Margin="0,40,0,0"
+                    Margin="0,-20,0,0"
                     FontSize="Large"
                     BackgroundColor="#FF6F61"
                     CornerRadius="10"
@@ -112,7 +118,7 @@
                     WidthRequest="300"
                     FontAttributes="Bold"
                     HorizontalOptions="Center"
-                    Clicked="Register_Clicked"/>
+                    Command="{Binding RegisterUser}"/>
             </VerticalStackLayout>
         </Grid>
     </ScrollView>

@@ -101,9 +101,21 @@
                     HeightRequest="50"
                     VerticalOptions="End"
                     HorizontalOptions="Center"
-                    Clicked="Button_Clicked"
+                    Command="{Binding CheckLoginCommand}"
                     
                     Margin="0,20,0,0"/>
+                <Button Text="Logout"
+                    BackgroundColor="#FF6347" 
+                    FontSize="18"
+                    Padding="10"
+                    CornerRadius="25"
+                    WidthRequest="200"
+                    HeightRequest="50"
+                    VerticalOptions="End"
+                    HorizontalOptions="Center"
+                    Command="{Binding LogoutCommand}"
+                    Margin="0,20,0,0"/>
+                
             </VerticalStackLayout>
         </Grid>
     </ScrollView>

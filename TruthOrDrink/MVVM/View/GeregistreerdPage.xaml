@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TruthOrDrink.GeregistreerdPage"
+             xmlns:vm="clr-namespace:TruthOrDrink.MVVM.ViewModels"
              BackgroundColor="#004D4D">
     <!-- Main Grid Layout -->
     <ScrollView>
@@ -62,7 +63,7 @@
                     WidthRequest="300"
                     FontAttributes="Bold"
                     HorizontalOptions="Center"
-                    Clicked="Homepage_Clicked"/>
+                    Command="{Binding Geregistreerd}"/>
             </VerticalStackLayout>
         </Grid>
     </ScrollView>
