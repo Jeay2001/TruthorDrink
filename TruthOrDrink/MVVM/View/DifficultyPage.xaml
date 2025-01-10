@@ -49,13 +49,11 @@
                         FontSize="Large"
                         FontAttributes="Bold"
                         BackgroundColor="Transparent"
-                        HorizontalOptions="Center">
-                        <Picker.Items>
-                            <x:String>Categorie 1</x:String>
-                            <x:String>Categorie 2</x:String>
-                            <x:String>Categorie 3</x:String>
-                            <x:String>Categorie 4</x:String>
-                        </Picker.Items>
+                        HorizontalOptions="Center"
+                        VerticalTextAlignment="Center"
+                        HorizontalTextAlignment="Center"
+                        ItemsSource="{Binding Categories}"
+                        SelectedItem="{Binding SelectedCategory}">
                     </Picker>
                 </Frame>
                 <Frame CornerRadius="10"
@@ -64,20 +62,17 @@
                    HeightRequest="60"
                    WidthRequest="300"
                    HorizontalOptions="Center">
-                    <Picker Title="Select Difficulty"
-                        TextColor="#003131"
-                        FontSize="Large"
-                        FontAttributes="Bold"
-                        BackgroundColor="Transparent"
-                        HorizontalOptions="Center">
-                        <Picker.Items>
-                            <x:String>1</x:String>
-                            <x:String>2</x:String>
-                            <x:String>3</x:String>
-                            <x:String>4</x:String>
-                            <x:String>5</x:String>
-                        </Picker.Items>
-                    </Picker>
+                    <VerticalStackLayout>
+                        <Slider ThumbColor="#003131" 
+                                MinimumTrackColor="#003131"
+                                Minimum="1" 
+                                Maximum="3" 
+                                Value="{Binding SelectedDifficulty}" />
+                        <Label TextColor="#003131" 
+                               Text="{Binding SelectedDifficulty, StringFormat='Difficulty: {0}'}" 
+                               FontSize="Large" 
+                               HorizontalOptions="Center" />
+                    </VerticalStackLayout>
                 </Frame>
                 <Frame CornerRadius="10"
            BackgroundColor="#98FBC5"

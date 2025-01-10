@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TruthOrDrink.MVVM.View.WinPage"
+             BackgroundColor="#004D4D">
+    <VerticalStackLayout Padding="20" Spacing="20" HorizontalOptions="Center" VerticalOptions="Center">
+        <Label Text="Congratulations!" FontSize="Large" TextColor="White" HorizontalOptions="Center" />
+        <Label Text="{Binding WinnerName}" FontSize="Large" TextColor="White" HorizontalOptions="Center" />
+        <Label Text="{Binding Score, StringFormat='Your Score: {0}'}" FontSize="Large" TextColor="White" HorizontalOptions="Center" />
+        <Button Text="Back to Difficulty Page" Command="{Binding BackToDifficultyCommand}" BackgroundColor="#FF6F61" TextColor="White" CornerRadius="10" HeightRequest="50" WidthRequest="200" HorizontalOptions="Center" />
+    </VerticalStackLayout>
+</ContentPage>

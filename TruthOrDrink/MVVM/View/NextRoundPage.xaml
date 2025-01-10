@@ -18,7 +18,7 @@
             </Grid.ColumnDefinitions>
 
             <!-- Rest of the content below the settings button -->
-            <VerticalStackLayout Grid.Row="2" Spacing="50" Padding="20" HorizontalOptions="Center">
+            <VerticalStackLayout Grid.Row="1" Spacing="50" Padding="20" HorizontalOptions="Center">
 
                 <!-- Logo -->
                 <Image
@@ -51,6 +51,16 @@
                     </Frame>
                     <Image x:Name="MemeImage" Aspect="AspectFit" />
                 </StackLayout>
+
+                <Button Text="Next Question" 
+                        Margin="0,-40,0,0"
+                        BackgroundColor="#FF6F61" 
+                        TextColor="White" 
+                        CornerRadius="10" 
+                        HeightRequest="50" 
+                        WidthRequest="200" 
+                        HorizontalOptions="Center" 
+                        Clicked="NextQuestion_Clicked" />
                 
             </VerticalStackLayout>
         </Grid>

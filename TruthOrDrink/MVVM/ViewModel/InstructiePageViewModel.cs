@@ -40,7 +40,7 @@ namespace TruthOrDrink.MVVM.ViewModel
                 }
                 else
                 {
-                    await Application.Current.MainPage.DisplayAlert("Error", "No stored credentials found", "OK");
+                    //await Application.Current.MainPage.DisplayAlert("Error", "No stored credentials found", "OK");
                     await Navigation.PushModalAsync(new LoginPage());
                 }
             });

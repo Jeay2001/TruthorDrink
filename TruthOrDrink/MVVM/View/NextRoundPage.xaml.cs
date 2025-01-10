@@ -22,6 +22,17 @@ public partial class NextRoundPage : ContentPage
         // Prevent going back to InstructiePage
         return true;
     }
+    private async void NextQuestion_Clicked(object sender, EventArgs e)
+    {
+        // Navigate back to the GamePage and trigger the next question
+        await Navigation.PopModalAsync();
+        var gamePage = Navigation.NavigationStack.LastOrDefault() as GamePage;
+        if (gamePage != null)
+        {
+            var viewModel = gamePage.BindingContext as GamePageViewModel;
+            viewModel?.NextQuestionCommand.Execute(null);
+        }
+    }
     protected override async void OnAppearing()
     {
         base.OnAppearing();
