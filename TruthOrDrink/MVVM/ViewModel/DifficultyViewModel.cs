@@ -12,6 +12,7 @@ namespace TruthOrDrink.MVVM.ViewModel
         public ObservableCollection<CategoryEnum> Categories { get; set; }
         private CategoryEnum selectedCategory;
         private int selectedDifficulty = 1; // Default to 1
+        private string playerName;
 
         public CategoryEnum SelectedCategory
         {
@@ -33,12 +34,38 @@ namespace TruthOrDrink.MVVM.ViewModel
             }
         }
 
+        public string PlayerName
+        {
+            get => playerName;
+            set
+            {
+                playerName = value;
+                OnPropertyChanged();
+            }
+        }
+
         public ICommand StartGameCommand { get; }
 
         public DifficultyPageViewModel()
         {
             Categories = new ObservableCollection<CategoryEnum>(System.Enum.GetValues(typeof(CategoryEnum)).Cast<CategoryEnum>());
+            LoadUserName();
             StartGameCommand = new Command(StartGame);
+        }
+
+        private void LoadUserName()
+        {
+            try
+            {
+                var email = SecureStorage.GetAsync("email").Result;
+                var user = App.UserRepo?.GetEntities().FirstOrDefault(u => u.Email == email);
+                PlayerName = user != null ? user.Name : "Player";
+            }
+            catch (Exception ex)
+            {
+                PlayerName = "Player";
+                Application.Current.MainPage.DisplayAlert("Error", $"Error loading user: {ex.Message}", "OK");
+            }
         }
 
         private async void StartGame()

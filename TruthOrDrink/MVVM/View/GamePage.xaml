@@ -60,7 +60,8 @@
                         HeightRequest="150" 
                         WidthRequest="150" 
                         CornerRadius="10"
-                        Command="{Binding AnswerQuestionCommand}"/>
+                        Command="{Binding AnswerQuestionCommand}"
+                        />
                 
                 <Frame 
                     Margin="0,0,0,0" 
@@ -87,7 +88,8 @@
                     HeightRequest="150" 
                     WidthRequest="150" 
                     CornerRadius="10"
-                    Command="{Binding TakeShotCommand}"/>
+                    Command="{Binding TakeShotCommand}"
+                    />
             </VerticalStackLayout>
         </Grid>
     </ScrollView>

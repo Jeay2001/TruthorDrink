@@ -11,11 +11,26 @@ namespace TruthOrDrink.MVVM.ViewModel
         public int Score { get; set; }
         public ICommand BackToDifficultyCommand { get; }
 
-        public WinViewModel(string winnerName, int score)
+        public WinViewModel(int score)
         {
-            WinnerName = winnerName;
+            LoadUserName();
             Score = score;
             BackToDifficultyCommand = new Command(BackToDifficulty);
+        }
+
+        private void LoadUserName()
+        {
+            try
+            {
+                var email = SecureStorage.GetAsync("email").Result;
+                var user = App.UserRepo?.GetEntities().FirstOrDefault(u => u.Email == email);
+                WinnerName = user != null ? user.Name : "Player";
+            }
+            catch (Exception ex)
+            {
+                WinnerName = "Player";
+                Application.Current.MainPage.DisplayAlert("Error", $"Error loading user: {ex.Message}", "OK");
+            }
         }
 
         private async void BackToDifficulty()

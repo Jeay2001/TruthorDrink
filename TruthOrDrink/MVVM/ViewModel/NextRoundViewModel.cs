@@ -39,5 +39,6 @@ namespace TruthOrDrink.MVVM.ViewModel
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
     }
 }

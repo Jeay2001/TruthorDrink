@@ -3,10 +3,98 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TruthOrDrink.MVVM.View.WinPage"
              BackgroundColor="#004D4D">
-    <VerticalStackLayout Padding="20" Spacing="20" HorizontalOptions="Center" VerticalOptions="Center">
-        <Label Text="Congratulations!" FontSize="Large" TextColor="White" HorizontalOptions="Center" />
-        <Label Text="{Binding WinnerName}" FontSize="Large" TextColor="White" HorizontalOptions="Center" />
-        <Label Text="{Binding Score, StringFormat='Your Score: {0}'}" FontSize="Large" TextColor="White" HorizontalOptions="Center" />
-        <Button Text="Back to Difficulty Page" Command="{Binding BackToDifficultyCommand}" BackgroundColor="#FF6F61" TextColor="White" CornerRadius="10" HeightRequest="50" WidthRequest="200" HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <Grid>
+            <!-- Define rows: One for the settings button, one for the rest of the page -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- Define a single column -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Settings Button in the top-right -->
+            <Grid>
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <!-- Placeholder for spacing -->
+                    <ColumnDefinition Width="Auto" />
+                    <!-- For the button -->
+                </Grid.ColumnDefinitions>
+            </Grid>
+
+            <VerticalStackLayout Padding="20" Spacing="20" HorizontalOptions="Center" VerticalOptions="Center">
+                <Image
+                    Margin="0,-50,0,0"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Source="Truthordrink.png"
+                    HeightRequest="185"
+                    Aspect="AspectFit"
+                    SemanticProperties.Description="Truth or drink Symbol" />
+
+                <Frame
+                    Margin="0,-50,0,0"
+                    CornerRadius="10"
+                    Background="#98FBC5"
+                    Padding="5"
+                    HeightRequest="60"
+                    WidthRequest="350"
+                    HorizontalOptions="Center"
+                    BackgroundColor="Transparent">
+                    <Label 
+                        Text="Congratulations!" 
+                        FontSize="Large" 
+                        TextColor="White" 
+                        HorizontalOptions="Center" />
+                </Frame>
+
+                <Frame
+                    Margin="0,-40,0,0"
+                    CornerRadius="10"
+                    Background="#98FBC5"
+                    Padding="5"
+                    HeightRequest="60"
+                    WidthRequest="350"
+                    HorizontalOptions="Center"
+                    BackgroundColor="Transparent">
+                    <Label 
+                        Text="{Binding WinnerName}" 
+                        FontSize="Large" 
+                        TextColor="White" 
+                        HorizontalOptions="Center" />
+                </Frame>
+
+                <Frame
+                    Margin="0,-40,0,0"
+                    CornerRadius="10"
+                    Background="#98FBC5"
+                    Padding="5"
+                    HeightRequest="60"
+                    WidthRequest="350"
+                    HorizontalOptions="Center"
+                    BackgroundColor="Transparent">
+                    <Label 
+                        Text="{Binding Score, StringFormat='Your Score: {0}'}" 
+                        FontSize="Large" 
+                        TextColor="White" 
+                        HorizontalOptions="Center" />
+                </Frame>
+
+                <Button 
+                    Text="Back to Difficulty Page" 
+                    Command="{Binding BackToDifficultyCommand}" 
+                    BackgroundColor="#FF6F61" 
+                    TextColor="White" 
+                    CornerRadius="10" 
+                    HeightRequest="50" 
+                    WidthRequest="200" 
+                    HorizontalOptions="Center" />
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
 </ContentPage>

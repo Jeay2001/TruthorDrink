@@ -49,7 +49,7 @@
                             VerticalOptions="Center"
                             HorizontalOptions="Center" />
                     </Frame>
-                    <Image x:Name="MemeImage" Aspect="AspectFit" />
+                    <Image x:Name="MemeImage" Aspect="AspectFit" MaximumHeightRequest="300" />
                 </StackLayout>
 
                 <Button Text="Next Question" 

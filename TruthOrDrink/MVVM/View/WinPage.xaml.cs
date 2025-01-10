@@ -4,9 +4,14 @@ namespace TruthOrDrink.MVVM.View;
 
 public partial class WinPage : ContentPage
 {
-    public WinPage(string winnerName, int score)
+    public WinPage(int score)
     {
         InitializeComponent();
-        BindingContext = new WinViewModel(winnerName, score);
+        BindingContext = new WinViewModel(score);
+    }
+    protected override bool OnBackButtonPressed()
+    {
+        // Prevent going back to InstructiePage
+        return true;
     }
 }
