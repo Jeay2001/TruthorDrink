@@ -75,17 +75,17 @@
                     </VerticalStackLayout>
                 </Frame>
                 <Frame CornerRadius="10"
-           BackgroundColor="#98FBC5"
-           Padding="10"
-           HeightRequest="300"
-           WidthRequest="300"
-           HorizontalOptions="Center">
+       BackgroundColor="#98FBC5"
+       Padding="10"
+       HeightRequest="300"
+       WidthRequest="300"
+       HorizontalOptions="Center">
                     <VerticalStackLayout Spacing="10" HorizontalOptions="Center">
                         <Label Text="Add Friends to Match"
-                   TextColor="#003131"
-                   FontSize="Large"
-                   FontAttributes="Bold"
-                   HorizontalOptions="Center" />
+               TextColor="#003131"
+               FontSize="Large"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
 
                         <!-- CollectionView for hardcoded friend list -->
                         <CollectionView HeightRequest="200">
@@ -101,19 +101,19 @@
 
                             <CollectionView.ItemTemplate>
                                 <DataTemplate>
-                                    <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
-                                        <CheckBox />
-                                        <Label Text="{Binding}" 
-                                   TextColor="#003131" 
-                                   FontSize="Medium" 
-                                   VerticalOptions="Center" />
-                                    </HorizontalStackLayout>
+                                    <Button Text="{Binding}"
+                            TextColor="#003131"
+                            BackgroundColor="Transparent"
+                            FontSize="Medium"
+                            HorizontalOptions="FillAndExpand"
+                            BorderWidth="0"
+                            Command="{x:Null}" />
                                 </DataTemplate>
                             </CollectionView.ItemTemplate>
                         </CollectionView>
                     </VerticalStackLayout>
                 </Frame>
-                
+
                 <Button Text="BEGIN GAME!" 
                     BackgroundColor="#FF6F61" 
                     TextColor="#003131" 

@@ -29,20 +29,26 @@
                 <!-- Questions List -->
                 <Frame BorderColor="#98FBC5" BackgroundColor="#98FBC5" CornerRadius="10" Padding="10" HasShadow="True">
                     <CollectionView ItemsSource="{Binding UserQuestions}"
-                    SelectionMode="Single"
-                    SelectedItem="{Binding SelectedQuestion}"
-                    HeightRequest="300">
+                                    SelectionMode="Single"
+                                    SelectedItem="{Binding SelectedQuestion}"
+                                    HeightRequest="300">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                 <SwipeView>
                                     <SwipeView.LeftItems>
                                         <SwipeItems>
                                             <SwipeItem Text="Delete"
-                                       BackgroundColor="Red"
-                                       Command="{Binding BindingContext.DeleteQuestionCommand, Source={RelativeSource AncestorType={x:Type local:ManageQuestionViewModel}}}"
-                                       CommandParameter="{Binding .}" />
+                                                       BackgroundColor="Red"
+                                                       Command="{Binding BindingContext.DeleteQuestionCommand, Source={RelativeSource AncestorType={x:Type local:ManageQuestionViewModel}}}"
+                                                       CommandParameter="{Binding .}" />
                                         </SwipeItems>
                                     </SwipeView.LeftItems>
+                                    <Grid ColumnDefinitions="*, *">
+                                        <Label Text="{Binding QuestionText}"
+                                               Grid.Column="0"
+                                               TextColor="#003131"
+                                               FontSize="Medium" />
+                                    </Grid>
                                 </SwipeView>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
@@ -57,7 +63,7 @@
                         Text="Save"
                         BackgroundColor="#FF6F61"
                         Margin="0,10,0,0"
-                            Command="{Binding SaveQuestionCommand}" />
+                        Command="{Binding SaveQuestionCommand}" />
                 </VerticalStackLayout>
             </VerticalStackLayout>
         </Grid>

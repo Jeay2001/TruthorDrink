@@ -156,14 +156,8 @@ namespace TruthOrDrink.MVVM.ViewModel
 
                     App.QuestionRepo?.SaveEntity(newQuestion);
 
-
-
-
-
-
-
                     await Application.Current.MainPage.DisplayAlert("Success", "Question added successfully", "OK");
-                    
+
                 }
                 else
                 {
@@ -172,7 +166,7 @@ namespace TruthOrDrink.MVVM.ViewModel
             }
             else
             {
-                await Application.Current.MainPage.DisplayAlert("Error", "Diificulty or Category not found", "OK");
+                await Application.Current.MainPage.DisplayAlert("Error", "Difficulty or Category not found", "OK");
             }
         }
     }

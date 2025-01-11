@@ -34,7 +34,7 @@
                        HeightRequest="200"
                        WidthRequest="200"
                        HorizontalOptions="Center">
-                    <Image Source="qrcodeplaceholder.png" Aspect="AspectFit" />
+                    <Image Source="qrcode.png" Aspect="AspectFit" />
                 </Frame>
 
                 <!-- Sla Op Button -->
