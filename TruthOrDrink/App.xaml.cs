@@ -1,4 +1,5 @@
-﻿using TruthOrDrink.Abstractions;
+﻿using Microsoft.Maui.Graphics;
+using TruthOrDrink.Abstractions;
 using TruthOrDrink.Logic;
 using TruthOrDrink.MVVM.Models;
 using TruthOrDrink.Repositories;
@@ -14,7 +15,7 @@ namespace TruthOrDrink
         public App(BaseRepository<User> userRepo, BaseRepository<Game> gameRepo, BaseRepository<Question> questionRepo, BaseRepository<Category> categoryRepo)
         {
             InitializeComponent();
-
+            DatabaseInitializer.Initialize();
             DependencyService.Register<IMemeService, MemeService>();
 
             UserRepo = userRepo;
@@ -31,6 +32,7 @@ namespace TruthOrDrink
             //App.UserRepo?.SaveEntity(hardcodedUser);
             // Set the MainPage to Instructiepage directly
             MainPage = new Instructiepage();
+        
         }
     }
 }

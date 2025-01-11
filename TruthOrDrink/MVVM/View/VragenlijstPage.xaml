@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:TruthOrDrink.MVVM.ViewModel"
              x:Class="TruthOrDrink.VragenlijstPage"
              BackgroundColor="#004D4D">
+
+  
 
     <!-- Main Scroll View -->
     <ScrollView>
@@ -12,7 +15,7 @@
             <!-- Back Button -->
             <Button ImageSource="returnicon.png"
                     BackgroundColor="Transparent"
-                    Clicked="Return_Clicked"
+                    Command="{Binding ReturnCommand}"
                     HorizontalOptions="Start"
                     VerticalOptions="Start"
                     Padding="5"
@@ -48,6 +51,7 @@
                    HorizontalOptions="Center"
                    VerticalOptions="Center">
                     <Entry Placeholder="Vraag"
+                        Text="{Binding QuestionText}"
                         PlaceholderColor="DarkGrey"
                         FontSize="16"
                         Margin="0"/>
@@ -61,19 +65,17 @@
                    WidthRequest="300"
                    HorizontalOptions="Center">
                     <Picker Title="Kies Categorie"
+                        ItemsSource="{Binding Categories}"
+                        SelectedItem="{Binding SelectedCategory}"
                         TextColor="#003131"
                         FontSize="Large"
                         FontAttributes="Bold"
                         BackgroundColor="Transparent"
                         HorizontalOptions="Center">
-                        <Picker.Items>
-                            <x:String>Categorie 1</x:String>
-                            <x:String>Categorie 2</x:String>
-                            <x:String>Categorie 3</x:String>
-                            <x:String>Categorie 4</x:String>
-                        </Picker.Items>
                     </Picker>
                 </Frame>
+
+                <!-- Select Difficulty Picker -->
                 <Frame CornerRadius="10"
                    BackgroundColor="#98FBC5"
                    Padding="5"
@@ -81,32 +83,58 @@
                    WidthRequest="300"
                    HorizontalOptions="Center">
                     <Picker Title="Select Difficulty"
+                        ItemsSource="{Binding Difficulties}"
+                        SelectedItem="{Binding SelectedDifficulty}"
                         TextColor="#003131"
                         FontSize="Large"
                         FontAttributes="Bold"
                         BackgroundColor="Transparent"
                         HorizontalOptions="Center">
-                        <Picker.Items>
-                            <x:String>1</x:String>
-                            <x:String>2</x:String>
-                            <x:String>3</x:String>
-                            <x:String>4</x:String>
-                            <x:String>5</x:String>
-                        </Picker.Items>
                     </Picker>
                 </Frame>
-                <Button Text="Toevoegen"
-                    BackgroundColor="#FF6F61"
-                    TextColor="#003131"
-                    FontSize="Large"
-                    FontAttributes="Bold"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    HeightRequest="40"
-                    WidthRequest="150"
-                    CornerRadius="10"
-                    Padding="5"
-                        Clicked="Toevoegen_Clicked"/>
+
+                <!-- Select Type Picker -->
+                <Frame CornerRadius="10"
+                   BackgroundColor="#FF6F61"
+                   Padding="5"
+                   HeightRequest="60"
+                   WidthRequest="300"
+                   HorizontalOptions="Center">
+                    <Picker Title="Select Type"
+                        ItemsSource="{Binding Types}"
+                        SelectedItem="{Binding SelectedType}"
+                        TextColor="#003131"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        BackgroundColor="Transparent"
+                        HorizontalOptions="Center">
+                    </Picker>
+                </Frame>
+
+                <!-- Buttons in HorizontalStackLayout -->
+                <HorizontalStackLayout Spacing="20" HorizontalOptions="Center">
+                    <Button Text="Toevoegen"
+                        BackgroundColor="LightGreen"
+                        TextColor="#003131"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        HeightRequest="40"
+                        WidthRequest="150"
+                        CornerRadius="10"
+                        Padding="5"
+                        Command="{Binding AddQuestionCommand}"/>
+
+                    <Button Text="Manage Questions"
+                        BackgroundColor="LightGreen"
+                        TextColor="#003131"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        HeightRequest="40"
+                        WidthRequest="150"
+                        CornerRadius="10"
+                        Padding="5"
+                        Command="{Binding ManageQuestionPageCommand}"/>
+                </HorizontalStackLayout>
 
             </VerticalStackLayout>
         

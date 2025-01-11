@@ -1,4 +1,5 @@
 ﻿using SQLite;
+using SQLiteNetExtensions.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -79,6 +80,36 @@ namespace TruthOrDrink.Repositories
                 }
             }
             catch (Exception ex)
+            {
+                StatusMessage = $"Error: {ex.Message}";
+            }
+        }
+
+        //Relations
+        public void SaveEntityWithChildren(T entity, bool recusive = false)
+        {
+            connection.InsertWithChildren(entity, recusive);
+        }
+        public List<T> GetEntitiesWithChildren()
+        {
+            try
+            {
+                return connection.GetAllWithChildren<T>().ToList();
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = $"Error: {ex.Message}";
+            }
+            return null;
+        }
+
+        public void DeleteEntityWIthChirldren(T entity)
+        {
+            try
+            {
+                connection.Delete(entity, true);
+            }
+            catch(Exception ex)
             {
                 StatusMessage = $"Error: {ex.Message}";
             }

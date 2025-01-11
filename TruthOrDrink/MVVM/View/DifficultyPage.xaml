@@ -66,7 +66,7 @@
                         <Slider ThumbColor="#003131" 
                                 MinimumTrackColor="#003131"
                                 Minimum="1" 
-                                Maximum="3" 
+                                Maximum="5" 
                                 Value="{Binding SelectedDifficulty}" />
                         <Label TextColor="#003131" 
                                Text="{Binding SelectedDifficulty, StringFormat='Difficulty: {0}'}" 

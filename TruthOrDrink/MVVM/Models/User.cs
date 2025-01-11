@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SQLite;
+using SQLiteNetExtensions.Attributes;
 using TruthOrDrink.Abstractions;
 
 namespace TruthOrDrink.MVVM.Models

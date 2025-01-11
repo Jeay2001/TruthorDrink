@@ -33,6 +33,18 @@ namespace TruthOrDrink.Enum
                     },
                     new Category
                     {
+                        Name = CategoryEnum.Party,
+                        Difficulty = DifficultyEnum.VeryHard,
+                        Questions = InitializeQuestions(CategoryEnum.Party, DifficultyEnum.VeryHard)
+                    },
+                    new Category
+                    {
+                        Name = CategoryEnum.Party,
+                        Difficulty = DifficultyEnum.Extreme,
+                        Questions = InitializeQuestions(CategoryEnum.Party, DifficultyEnum.Extreme)
+                    },
+                    new Category
+                    {
                         Name = CategoryEnum.Friends,
                         Difficulty = DifficultyEnum.Easy,
                         Questions = InitializeQuestions(CategoryEnum.Friends, DifficultyEnum.Easy)
@@ -51,6 +63,18 @@ namespace TruthOrDrink.Enum
                     },
                     new Category
                     {
+                        Name = CategoryEnum.Friends,
+                        Difficulty = DifficultyEnum.VeryHard,
+                        Questions = InitializeQuestions(CategoryEnum.Friends, DifficultyEnum.VeryHard)
+                    },
+                    new Category
+                    {
+                        Name = CategoryEnum.Friends,
+                        Difficulty = DifficultyEnum.Extreme,
+                        Questions = InitializeQuestions(CategoryEnum.Friends, DifficultyEnum.Extreme)
+                    },
+                    new Category
+                    {
                         Name = CategoryEnum.Family,
                         Difficulty = DifficultyEnum.Easy,
                         Questions = InitializeQuestions(CategoryEnum.Family, DifficultyEnum.Easy)
@@ -66,6 +90,18 @@ namespace TruthOrDrink.Enum
                         Name = CategoryEnum.Family,
                         Difficulty = DifficultyEnum.Hard,
                         Questions = InitializeQuestions(CategoryEnum.Family, DifficultyEnum.Hard)
+                    },
+                    new Category
+                    {
+                        Name = CategoryEnum.Family,
+                        Difficulty = DifficultyEnum.VeryHard,
+                        Questions = InitializeQuestions(CategoryEnum.Family, DifficultyEnum.VeryHard)
+                    },
+                    new Category
+                    {
+                        Name = CategoryEnum.Family,
+                        Difficulty = DifficultyEnum.Extreme,
+                        Questions = InitializeQuestions(CategoryEnum.Family, DifficultyEnum.Extreme)
                     }
                 };
 
@@ -135,6 +171,32 @@ namespace TruthOrDrink.Enum
                 questions.Add(new Question { QuestionText = "Truth: Have you ever been dared to do something embarrassing at a party?", Type = "Truth", Difficulty = difficulty });
                 questions.Add(new Question { QuestionText = "Dare: Do your best impression of a famous person.", Type = "Dare", Difficulty = difficulty });
             }
+            else if (difficulty == DifficultyEnum.VeryHard)
+            {
+                questions.Add(new Question { QuestionText = "Truth: Have you ever been in a fight at a party?", Type = "Truth", Difficulty = difficulty });
+                questions.Add(new Question { QuestionText = "Dare: Do 20 push-ups.", Type = "Dare", Difficulty = difficulty });
+                questions.Add(new Question { QuestionText = "Truth: Have you ever been caught sneaking out of a party?", Type = "Truth", Difficulty = difficulty });
+                questions.Add(new Question { QuestionText = "Dare: Do a cartwheel.", Type = "Dare", Difficulty = difficulty });
+                questions.Add(new Question { QuestionText = "Truth: Have you ever been dared to do something dangerous?", Type = "Truth", Difficulty = difficulty });
+                questions.Add(new Question { QuestionText = "Dare: Eat something spicy.", Type = "Dare", Difficulty = difficulty });
+                questions.Add(new Question { QuestionText = "Truth: Have you ever been caught lying at a party?", Type = "Truth", Difficulty = difficulty });
+                questions.Add(new Question { QuestionText = "Dare: Do a handstand for 10 seconds.", Type = "Dare", Difficulty = difficulty });
+                questions.Add(new Question { QuestionText = "Truth: Have you ever been dared to kiss someone?", Type = "Truth", Difficulty = difficulty });
+                questions.Add(new Question { QuestionText = "Dare: Kiss someone on the cheek.", Type = "Dare", Difficulty = difficulty });
+            }
+            else if (difficulty == DifficultyEnum.Extreme)
+            {
+                questions.Add(new Question { QuestionText = "Truth: Have you ever been arrested at a party?", Type = "Truth", Difficulty = difficulty });
+                questions.Add(new Question { QuestionText = "Dare: Do a backflip.", Type = "Dare", Difficulty = difficulty });
+                questions.Add(new Question { QuestionText = "Truth: Have you ever been in a physical fight at a party?", Type = "Truth", Difficulty = difficulty });
+                questions.Add(new Question { QuestionText = "Dare: Eat a raw onion.", Type = "Dare", Difficulty = difficulty });
+                questions.Add(new Question { QuestionText = "Truth: Have you ever been caught doing something illegal at a party?", Type = "Truth", Difficulty = difficulty });
+                questions.Add(new Question { QuestionText = "Dare: Drink a raw egg.", Type = "Dare", Difficulty = difficulty });
+                questions.Add(new Question { QuestionText = "Truth: Have you ever been dared to do something illegal?", Type = "Truth", Difficulty = difficulty });
+                questions.Add(new Question { QuestionText = "Dare: Do 50 push-ups.", Type = "Dare", Difficulty = difficulty });
+                questions.Add(new Question { QuestionText = "Truth: Have you ever been caught sneaking into a party?", Type = "Truth", Difficulty = difficulty });
+                questions.Add(new Question { QuestionText = "Dare: Do a dance for 2 minutes.", Type = "Dare", Difficulty = difficulty });
+            }
 
             return questions;
         }
@@ -181,6 +243,32 @@ namespace TruthOrDrink.Enum
                 questions.Add(new Question { QuestionText = "Dare: Do 10 push-ups.", Type = "Dare", Difficulty = difficulty });
                 questions.Add(new Question { QuestionText = "Truth: Have you ever been in a fight with a friend?", Type = "Truth", Difficulty = difficulty });
                 questions.Add(new Question { QuestionText = "Dare: Let someone tickle you for 30 seconds.", Type = "Dare", Difficulty = difficulty });
+            }
+            else if (difficulty == DifficultyEnum.VeryHard)
+            {
+                questions.Add(new Question { QuestionText = "Truth: Have you ever been in a fight with a friend?", Type = "Truth", Difficulty = difficulty });
+                questions.Add(new Question { QuestionText = "Dare: Do 20 push-ups.", Type = "Dare", Difficulty = difficulty });
+                questions.Add(new Question { QuestionText = "Truth: Have you ever been caught lying to a friend?", Type = "Truth", Difficulty = difficulty });
+                questions.Add(new Question { QuestionText = "Dare: Do a cartwheel.", Type = "Dare", Difficulty = difficulty });
+                questions.Add(new Question { QuestionText = "Truth: Have you ever been dared to do something dangerous?", Type = "Truth", Difficulty = difficulty });
+                questions.Add(new Question { QuestionText = "Dare: Eat something spicy.", Type = "Dare", Difficulty = difficulty });
+                questions.Add(new Question { QuestionText = "Truth: Have you ever been caught sneaking out with a friend?", Type = "Truth", Difficulty = difficulty });
+                questions.Add(new Question { QuestionText = "Dare: Do a handstand for 10 seconds.", Type = "Dare", Difficulty = difficulty });
+                questions.Add(new Question { QuestionText = "Truth: Have you ever been dared to kiss a friend?", Type = "Truth", Difficulty = difficulty });
+                questions.Add(new Question { QuestionText = "Dare: Kiss a friend on the cheek.", Type = "Dare", Difficulty = difficulty });
+            }
+            else if (difficulty == DifficultyEnum.Extreme)
+            {
+                questions.Add(new Question { QuestionText = "Truth: Have you ever been arrested with a friend?", Type = "Truth", Difficulty = difficulty });
+                questions.Add(new Question { QuestionText = "Dare: Do a backflip.", Type = "Dare", Difficulty = difficulty });
+                questions.Add(new Question { QuestionText = "Truth: Have you ever been in a physical fight with a friend?", Type = "Truth", Difficulty = difficulty });
+                questions.Add(new Question { QuestionText = "Dare: Eat a raw onion.", Type = "Dare", Difficulty = difficulty });
+                questions.Add(new Question { QuestionText = "Truth: Have you ever been caught doing something illegal with a friend?", Type = "Truth", Difficulty = difficulty });
+                questions.Add(new Question { QuestionText = "Dare: Drink a raw egg.", Type = "Dare", Difficulty = difficulty });
+                questions.Add(new Question { QuestionText = "Truth: Have you ever been dared to do something illegal with a friend?", Type = "Truth", Difficulty = difficulty });
+                questions.Add(new Question { QuestionText = "Dare: Do 50 push-ups.", Type = "Dare", Difficulty = difficulty });
+                questions.Add(new Question { QuestionText = "Truth: Have you ever been caught sneaking into a party with a friend?", Type = "Truth", Difficulty = difficulty });
+                questions.Add(new Question { QuestionText = "Dare: Do a dance for 2 minutes.", Type = "Dare", Difficulty = difficulty });
             }
 
             return questions;

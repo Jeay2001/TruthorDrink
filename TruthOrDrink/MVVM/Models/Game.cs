@@ -10,6 +10,7 @@ using TruthOrDrink.Abstractions;
 namespace TruthOrDrink.MVVM.Models
 {
     [Table("Game")]
+
     public class Game : TableData
     {
         [Ignore]
