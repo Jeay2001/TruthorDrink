@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TruthOrDrink.Qrcode"
+             x:Class="TruthOrDrink.QrPage"
              BackgroundColor="#004D4D">
 
     <!-- Main Scroll View -->
@@ -34,21 +34,25 @@
                        HeightRequest="200"
                        WidthRequest="200"
                        HorizontalOptions="Center">
-                    <Image Source="qrcode.png" Aspect="AspectFit" />
+                    <Image x:Name="QrCodeImage"
+                           Source="qrcode.png"
+                           Aspect="AspectFit" />
                 </Frame>
 
-                <!-- Sla Op Button -->
+                <!-- Save Button -->
                 <Frame CornerRadius="10"
                        BackgroundColor="#98FBC5"
                        Padding="5"
-                       HeightRequest="50"
+                       HeightRequest="55"
                        WidthRequest="300"
                        HorizontalOptions="Center">
-                    <Label Text="Sla Op"
-                           TextColor="#003131"
-                           FontSize="Large"
-                           FontAttributes="Bold"
-                           HorizontalOptions="Center" />
+                    <Button Text="Sla Op"
+                            TextColor="#003131"
+                            FontSize="Large"
+                            FontAttributes="Bold"
+                            BackgroundColor="Transparent"
+                            Clicked="OnSaveQrCodeTapped"
+                            HorizontalOptions="Center" />
                 </Frame>
             </VerticalStackLayout>
         </Grid>
