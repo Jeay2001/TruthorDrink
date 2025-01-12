@@ -34,5 +34,26 @@ namespace TruthOrDrink
             MainPage = new Instructiepage();
         
         }
+        protected override async void OnStart()
+        {
+            base.OnStart();
+            //await RequestStoragePermission();
+        }
+        private async Task RequestStoragePermission()
+        {
+            var status = await Permissions.CheckStatusAsync<Permissions.StorageWrite>();
+            if (status != PermissionStatus.Granted)
+            {
+                status = await Permissions.RequestAsync<Permissions.StorageWrite>();
+            }
+
+            if (status != PermissionStatus.Granted)
+            {
+                if (MainPage != null)
+                {
+                    await MainPage.DisplayAlert("Permission Denied", "Storage permission is required to save the QR code.", "OK");
+                }
+            }
+        }
     }
 }

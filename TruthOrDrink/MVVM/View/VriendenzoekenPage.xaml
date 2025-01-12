@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:TruthOrDrink.MVVM.ViewModel"
              x:Class="TruthOrDrink.Vriendenzoeken"
              BackgroundColor="#004D4D">
 
@@ -62,18 +63,16 @@
                     Clicked="Zoek_Clicked" />
 
                 <!-- Scan QR Code Button -->
-                <Frame CornerRadius="10"
-                       BackgroundColor="#FF6F61"
-                       Padding="5"
-                       HeightRequest="50"
-                       WidthRequest="300"
-                       HorizontalOptions="Center">
-                    <Label Text="Scan QR Code"
-                           TextColor="#003131"
-                           FontSize="Large"
-                           FontAttributes="Bold"
-                           HorizontalOptions="Center" />
-                </Frame>
+                <Button Text="Scan QR Code"
+                        BackgroundColor="#FF6F61"
+                        TextColor="#003131"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        CornerRadius="10"
+                        HeightRequest="50"
+                        WidthRequest="300"
+                        HorizontalOptions="Center"
+                        Command="{Binding ScanQRCommand}" />
             </VerticalStackLayout>
         </Grid>
     </ScrollView>
