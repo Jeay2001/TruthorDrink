@@ -8,6 +8,7 @@ using TruthOrDrink.MVVM.ViewModel;
 
 namespace TruthOrDrink.MVVM.View;
 
+
 public partial class NextRoundPage : ContentPage
 {
     private readonly IMemeService _memeService;
@@ -25,13 +26,20 @@ public partial class NextRoundPage : ContentPage
     private async void NextQuestion_Clicked(object sender, EventArgs e)
     {
         // Navigate back to the GamePage and trigger the next question
-        await Navigation.PopModalAsync();
         var gamePage = Navigation.NavigationStack.LastOrDefault() as GamePage;
         if (gamePage != null)
         {
             var viewModel = gamePage.BindingContext as GamePageViewModel;
-            viewModel?.NextQuestionCommand.Execute(null);
+            if (viewModel != null)
+            {
+                // Directly call NextQuestion instead of executing the command
+                viewModel.NextQuestion();
+                await Task.Delay(100); // Ensure the next question is set
+                                       // Explicitly notify the UI to update
+                viewModel.OnPropertyChanged(nameof(viewModel.CurrentQuestion));
+            }
         }
+        await Navigation.PopModalAsync();
     }
     protected override async void OnAppearing()
     {

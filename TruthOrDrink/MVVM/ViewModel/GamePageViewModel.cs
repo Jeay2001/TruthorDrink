@@ -13,11 +13,20 @@ namespace TruthOrDrink.MVVM.ViewModel
         private int currentQuestionIndex;
         private ObservableCollection<Question> questions;
         private int score;
-        private const int WinningScore = 10; // Set the winning score
+        private const int WinningScore = 1; // Set the winning score
         private bool isAnsweringEnabled = true;
 
         public string PlayerName { get; set; }
-        public Question CurrentQuestion { get; set; }
+        private Question currentQuestion;
+        public Question CurrentQuestion
+        {
+            get => currentQuestion;
+            set
+            {
+                currentQuestion = value;
+                OnPropertyChanged();
+            }
+        }
         public ICommand AnswerQuestionCommand { get; }
         public ICommand TakeShotCommand { get; }
         public ICommand NextQuestionCommand { get; }
@@ -100,13 +109,14 @@ namespace TruthOrDrink.MVVM.ViewModel
         public void NextQuestion()
         {
             currentQuestionIndex = (currentQuestionIndex + 1) % questions.Count;
+            Console.WriteLine($"Next Question Index: {currentQuestionIndex}");
             CurrentQuestion = questions[currentQuestionIndex];
             OnPropertyChanged(nameof(CurrentQuestion));
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = null!)
+        public void OnPropertyChanged([CallerMemberName] string propertyName = null!)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }

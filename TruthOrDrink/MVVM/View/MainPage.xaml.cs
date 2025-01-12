@@ -10,6 +10,11 @@ namespace TruthOrDrink
             NavigationPage.SetHasNavigationBar(this, false);
             BindingContext = new MainPageViewModel(Navigation);
         }
+        protected override bool OnBackButtonPressed()
+        {
+            // Prevent going back to InstructiePage
+            return true;
+        }
     }
 
 }

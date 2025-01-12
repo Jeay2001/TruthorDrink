@@ -55,7 +55,7 @@
                 <Button Text="Next Question" 
                         Margin="0,-40,0,0"
                         BackgroundColor="#FF6F61" 
-                        TextColor="White" 
+                        TextColor="#003131" 
                         CornerRadius="10" 
                         HeightRequest="50" 
                         WidthRequest="200" 

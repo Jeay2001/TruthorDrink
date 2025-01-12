@@ -73,11 +73,10 @@ namespace TruthOrDrink.MVVM.ViewModel
 
         private async Task DeleteQuestion(Question question)
         {
-            var confirm = await Application.Current.MainPage.DisplayAlert("Confirm", "Are you sure you want to delete this question?", "Yes", "No");
-            if (confirm)
+            
+            if (SelectedQuestion != null)
             {
-                App.QuestionRepo?.DeleteEnity(question);
-                UserQuestions.Remove(question);
+                App.QuestionRepo?.DeleteEnity(SelectedQuestion);
                 LoadUserQuestions();
             }
         }

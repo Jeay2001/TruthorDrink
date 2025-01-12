@@ -39,8 +39,8 @@
                                         <SwipeItems>
                                             <SwipeItem Text="Delete"
                                                        BackgroundColor="Red"
-                                                       Command="{Binding BindingContext.DeleteQuestionCommand, Source={RelativeSource AncestorType={x:Type local:ManageQuestionViewModel}}}"
-                                                       CommandParameter="{Binding .}" />
+                                                       Command="{Binding Source={RelativeSource 
+                                                       AncestorType={x:Type local:ManageQuestionViewModel}}, Path=DeleteQuestionCommand}" />
                                         </SwipeItems>
                                     </SwipeView.LeftItems>
                                     <Grid ColumnDefinitions="*, *">
