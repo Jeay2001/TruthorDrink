@@ -15,7 +15,7 @@ namespace TruthOrDrink
 
         private async void Return_Clicked(object sender, EventArgs e)
         {
-            // Handle return button click
+            await Navigation.PushModalAsync(new Vriendelijst());
         }
 
         private async void OnSaveQrCodeTapped(object sender, EventArgs e)
@@ -41,7 +41,13 @@ namespace TruthOrDrink
                 // If it's a FileImageSource, get the file path
                 if (qrCodeImage is FileImageSource fileImageSource)
                 {
-                    var qrCodeFilePath = fileImageSource.File;
+                    var qrCodeFilePath = GetFilePath(fileImageSource.File);
+                    if (string.IsNullOrEmpty(qrCodeFilePath))
+                    {
+                        await DisplayAlert("Error", "QR code file path not found.", "OK");
+                        return;
+                    }
+
                     var qrCodeBytes = File.ReadAllBytes(qrCodeFilePath);
 
                     // Save the image to the phone's storage
@@ -77,6 +83,27 @@ namespace TruthOrDrink
             }
         }
 
+        private string GetFilePath(string fileName)
+        {
+            try
+            {
+#if ANDROID
+                    return Path.Combine(FileSystem.AppDataDirectory, fileName);
+#elif IOS
+                    return Path.Combine(FileSystem.AppDataDirectory, fileName);
+#elif WINDOWS
+                return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), fileName);
+#else
+                    throw new PlatformNotSupportedException("Platform not supported");
+#endif
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error getting file path: {ex.Message}");
+                return string.Empty;
+            }
+        }
+
         private async Task<string> SaveFileAsync(byte[] fileBytes)
         {
             try
@@ -98,9 +125,9 @@ namespace TruthOrDrink
             try
             {
 #if ANDROID || IOS
-                return Path.Combine(FileSystem.AppDataDirectory, fileName);
+                    return Path.Combine(FileSystem.AppDataDirectory, fileName);
 #elif WINDOWS
-                    return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), fileName);
+                return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), fileName);
 #else
                     throw new PlatformNotSupportedException("Platform not supported");
 #endif

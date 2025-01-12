@@ -37,7 +37,7 @@ namespace TruthOrDrink
         protected override async void OnStart()
         {
             base.OnStart();
-            await RequestStoragePermission();
+            //await RequestStoragePermission();
         }
         private async Task RequestStoragePermission()
         {
